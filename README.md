@@ -19,5 +19,6 @@ They can be Icons, Buttons, Forms, etc.
   iconHeight="24",
   viewBox="0 0 24 24",
   iconFill="#ffffff",
+  iconTitle="Accessible title"
 />
 ```
