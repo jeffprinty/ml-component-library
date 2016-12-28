@@ -10,3 +10,14 @@ They can be Icons, Buttons, Forms, etc.
     menuTitle='test!'
     menuArray={['beans','baby foxes']}/>
 ```
+## MLIcon
+```
+<MLIcon 
+  iconType={ 'item_edit' } 
+  className={ css['icon'] }
+  iconWidth="24",
+  iconHeight="24",
+  viewBox="0 0 24 24",
+  iconFill="#ffffff",
+/>
+```
