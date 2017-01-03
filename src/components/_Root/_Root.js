@@ -26,8 +26,17 @@ class _Root extends Component {
       <div>
         <div className={css['demoWrap']}>
           <h2>Icons</h2>
-          <pre>
-            {'<MLIcon iconType={title} iconTitle={title} />'}
+          <pre>{`
+import MLIcon from 'ml-react-cdl-icons';
+<MLIcon 
+  iconTitle="add note" 
+  iconFill="#ffffff" 
+  iconType="edit" 
+  iconWidth="24" 
+  iconHeight="24"
+  viewBox="0 0 24 24"
+  className="icon" />
+          `}
           </pre>
           <ul style={{ height: '400px', width: '250px', overflowY: 'scroll' }}>
           { iconArray.map(function(title,i){
@@ -38,6 +47,7 @@ class _Root extends Component {
         </div>
         <div className={css['demoWrap']}>
           <h2>Buttons</h2>
+          <pre>{`<MLButton title='Secondary Green' btnClass='secondary' secondary='green' clickFunc={function(click){}} />`}</pre>
           <MLButton title='Primary ' btnClass='primary' />
           <MLButton title='Primary Red' btnClass='primary' secondary='red' />
           <MLButton title='Primary Green' btnClass='primary' secondary='green' />
