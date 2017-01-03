@@ -13,7 +13,7 @@ const webpackConfig = {
   devServer: {
     https: false,
     host: 'localhost',
-    port: '8000',
+    port: process.env.PORT || '8000',
 
     contentBase: path.resolve(__dirname, 'src'),
     historyApiFallback: true,
