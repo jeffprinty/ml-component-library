@@ -27,12 +27,12 @@
     "resolve-url-loader": "^1.6.0",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
+  },
+  "dependencies": {
     "webpack": "^1.13.3",
     "webpack-combine-loaders": "^2.0.3",
     "webpack-dev-server": "^1.16.2",
     "webpack-validator": "^2.2.9"
-  },
-  "dependencies": {
     "classnames": "^2.2.5",
     "ml-react-cdl-icons": "git+https://jeffprinty@bitbucket.org/jeffprinty/ml-react-cdl-icons.git",
     "moment": "^2.17.1",
