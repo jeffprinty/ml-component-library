@@ -1,0 +1,98 @@
+.container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  height:100%;
+ /* max-width:920px;
+  margin:0 auto;*/
+}
+.menuBar {
+	background-color: #FFFFFF;
+	border: 1px solid #DDDDDD;
+	display:block;
+	width: 100%;
+	height:50px;
+}
+.menu {
+	text-align: center;
+	height: 50px;
+}
+.mainWrap {
+	display: flex;
+	height: 100%;
+	flex-flow: column nowrap;
+}
+.menuItem {
+	display:inline;
+	padding:10px 12px;
+	line-height: 50px;
+	border-bottom: 2px solid transparent;
+	cursor: pointer;
+}
+.menuItem:hover, .active {
+	border-bottom: 3px solid #DA1B2C;
+}
+.readerWrap {
+	height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+  overflow-y: hidden;
+}
+.notebookWrap {
+  overflow-y: scroll;
+}
+
+.reviewWrap {
+	display:flex;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+.vsWrap {
+  flex: 3;
+}
+.sidebarWrap {
+  flex: 1;
+  background-color: #F8F8F8;
+  transition:width .8s ease;
+}
+.sidebarOpen {
+  width: auto;
+  flex: 1;
+  background-color: #F8F8F8;
+  overflow-y: auto;
+  overflow-y: auto;
+}
+.sidebarClosed {
+  flex: 0 0 100px;
+  background-color: #F8F8F8;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+.sidebarExpander {
+  margin: 10px;
+  padding: 18px 23px;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2);
+  background-color: #FFFFFF;
+  color: #080808;
+  position: relative;
+  opacity: 1.0;
+  transition: opacity 500ms 500ms;
+  cursor: pointer;
+}
+
+.sidebarHeaderTitle {
+  flex: 3;
+  line-height: 22px;
+  margin-left: 4px;
+}
+.expanderIcon {
+  fill: #666666;
+}
+
+.cfi {
+  position: absolute;
+  bottom: 0px;
+}
