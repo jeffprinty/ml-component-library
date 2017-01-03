@@ -7,6 +7,8 @@
   },
   "homepage": "https://bitbucket.org/mnv_tech/ml-react-component",
   "devDependencies": {
+  },
+  "dependencies": {
     "babel-core": "^6.18.2",
     "babel-eslint": "^7.1.1",
     "babel-loader": "^6.2.8",
@@ -26,9 +28,7 @@
     "react-contenteditable": "^2.0.1",
     "resolve-url-loader": "^1.6.0",
     "style-loader": "^0.13.1",
-    "url-loader": "^0.5.7"
-  },
-  "dependencies": {
+    "url-loader": "^0.5.7",
     "classnames": "^2.2.5",
     "ml-react-cdl-icons": "git+https://jeffprinty@bitbucket.org/jeffprinty/ml-react-cdl-icons.git",
     "moment": "^2.17.1",
