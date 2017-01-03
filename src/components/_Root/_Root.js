@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import MLIcon from '../MLIcon/MLIcon';
+import MLMenu from '../MLMenu/MLMenu';
+import MLCard from '../MLCard/MLCard';
 import MLButton from '../MLButton/MLButton';
 import MarkerOrb from '../MarkerOrb/MarkerOrb.js';
 
@@ -23,7 +25,8 @@ class _Root extends Component {
     let componentArray = [];
     console.log(this._getIcons);
     return (
-      <div>
+      <div className={ css['container']}>
+        <h1>ML CDL React Kitchen Sink</h1>
         <div className={css['demoWrap']}>
           <h2>Icons</h2>
           <pre>{`
@@ -38,27 +41,72 @@ import MLIcon from 'ml-react-cdl-icons';
   className="icon" />
           `}
           </pre>
-          <ul style={{ height: '400px', width: '250px', overflowY: 'scroll' }}>
+          <div className={css['iconGrid']}>
           { iconArray.map(function(title,i){
-              return (<li style={{ listStyle: 'none' }}key={i}><MLIcon iconType={title} iconTitle={title} /><span className={ css['iconName'] }>{title}</span></li>)
+              return (<span className={css['iconWrap']} key={i}><MLIcon iconType={title} iconTitle={title} /><span className={ css['iconName'] }>{title}</span></span> )
             })
           }
-          </ul>
+          </div>
+        </div>
+        <div className={css['demoWrap']}>
+          <h2>Menu</h2>
+          <MLMenu 
+            itemClicked={ function(c){console.log('clicked item',c)} } 
+            menuTitle='test!'
+            menuArray={['beans','baby foxes']}/>
+        <pre>{`
+<MLMenu 
+  itemClicked={ function(c){console.log('clicked item',c)} } 
+  menuTitle='test!'
+  menuArray={['beans','baby foxes']}/>
+        `}</pre>
+        </div>
+        <div className={css['demoWrap']}>
+          <h2>Cards</h2>
+          <MLCard 
+            title="Fleem" 
+            content="RealFakeDoors.com" 
+            button={<MLButton title='Primary ' btnClass='primary' />}
+            />
+        <pre>{`
+<MLCard 
+  title="Fleem" 
+  content="RealFakeDoors.com" 
+  button={<MLButton title='Primary ' btnClass='primary' />}
+  />
+        `}</pre>
+          
         </div>
         <div className={css['demoWrap']}>
           <h2>Buttons</h2>
-          <pre>{`<MLButton title='Secondary Green' btnClass='secondary' secondary='green' clickFunc={function(click){}} />`}</pre>
+          <h3>Primary</h3>
           <MLButton title='Primary ' btnClass='primary' />
           <MLButton title='Primary Red' btnClass='primary' secondary='red' />
           <MLButton title='Primary Green' btnClass='primary' secondary='green' />
-          <br/>
+           <pre>{`
+<MLButton title='Primary ' btnClass='primary' />
+<MLButton title='Primary Red' btnClass='primary' secondary='red' />
+<MLButton title='Primary Green' btnClass='primary' secondary='green' />
+            `}</pre>
+          <h3>Secondary</h3>
           <MLButton title='Secondary' btnClass='secondary' />
           <MLButton title='Secondary Red' btnClass='secondary' secondary='red' />
           <MLButton title='Secondary Green' btnClass='secondary' secondary='green' />
-          <br/>
+          <pre>{`
+<MLButton title='Secondary' btnClass='secondary' />
+<MLButton title='Secondary Red' btnClass='secondary' secondary='red' />
+<MLButton title='Secondary Green' btnClass='secondary' secondary='green' />
+          `}</pre>
+          <h3>With icon</h3>
           <MLButton icon={<MLIcon iconTitle={ 'edit' } iconType={ 'edit' } iconFill='inherit' />} title='Primary' btnClass='primary' secondary='icon' />
           <MLButton icon={<MLIcon iconTitle={ 'arrow_left' } iconType={ 'arrow_left' } iconFill='inherit' />} title='Primary' btnClass='primary' secondary='icon' />
           <MLButton icon={<MLIcon iconTitle={ 'edit' } iconType={ 'edit' } iconFill='inherit' />} title='Primary' btnClass='primary' secondary='icon' />
+          <pre>{`
+<MLButton icon={<MLIcon iconTitle={ 'edit' } iconType={ 'edit' } iconFill='inherit' />} title='Primary' btnClass='primary' secondary='icon' />
+<MLButton icon={<MLIcon iconTitle={ 'arrow_left' } iconType={ 'arrow_left' } iconFill='inherit' />} title='Primary' btnClass='primary' secondary='icon' />
+<MLButton icon={<MLIcon iconTitle={ 'edit' } iconType={ 'edit' } iconFill='inherit' />} title='Primary' btnClass='primary' secondary='icon' />
+          `}</pre>
+
         </div>
       </div>
     );

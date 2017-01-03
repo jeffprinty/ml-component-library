@@ -5,6 +5,13 @@ They can be Icons, Buttons, Forms, etc.
 
 Now includes a webpack server and the beginnings of a KitchenSink-like app for CDL components
 
+Clone this branch and then run `npm install && npm start` to run the server and try out components.
+
+PRs greatly appreciated.
+
+## TODO
+* Package these as modules for NPM installation
+
 ## MLMenu
 ```
 <MLMenu 

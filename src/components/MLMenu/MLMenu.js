@@ -6,6 +6,7 @@ class MLMenu extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      menuTitle: props.menuTitle,
       menuOpen: false
     }
   }
@@ -18,12 +19,16 @@ class MLMenu extends Component {
   }
   _clickItem = (click) => {
     console.log(click);
-    this.props.itemClicked(click)
+    this.props.itemClicked(click);
+    this.setState({
+      menuTitle: click,
+      menuOpen: false,
+    })
   }
 
   render() {
-    const { menuOpen } = this.state;
-    const { menuTitle, menuArray } = this.props;
+    const { menuTitle, menuOpen } = this.state;
+    const { menuArray } = this.props;
     let that = this;
     return (
       <div className={ css["dropdown"] }>
