@@ -52,7 +52,7 @@ const webpackConfig = {
   },
   output: {
     path: path.resolve(__dirname, 'build'),
-    publicPath: 'http://localhost:8000/', // Use absolute paths to avoid the way that URLs are resolved by Chrome when they're parsed from a dynamically loaded CSS blob. Note: Only necessary in Dev.
+    publicPath: '/', // Use absolute paths to avoid the way that URLs are resolved by Chrome when they're parsed from a dynamically loaded CSS blob. Note: Only necessary in Dev.
     filename: '[name].bundle.js',
     library: 'Library',
     libraryTarget: 'umd',
