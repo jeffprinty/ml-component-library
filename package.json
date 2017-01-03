@@ -41,6 +41,7 @@
     "resolve-url": "^0.2.1",
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2",
+    "html-webpack-plugin": "^2.24.1",
     "webpack-combine-loaders": "^2.0.3",
     "webpack-validator": "^2.2.9"
   },
