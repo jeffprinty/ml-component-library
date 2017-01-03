@@ -43,6 +43,7 @@
     "react-dom": "^15.4.0",
     "react-hot-loader": "^3.0.0-beta.6",
     "resolve-url": "^0.2.1",
+    "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2"
   },
   "scripts": {
