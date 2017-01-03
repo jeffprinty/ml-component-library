@@ -12,7 +12,7 @@ const webpackConfig = {
 
   devServer: {
     https: false,
-    host: 'localhost',
+    host: '0.0.0.0',
     port: (process.env.PORT || '8000'),
 
     contentBase: path.resolve(__dirname, 'src'),
