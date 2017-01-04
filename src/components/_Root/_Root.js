@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import MLIcon from '../MLIcon/MLIcon';
 import MLMenu from '../MLMenu/MLMenu';
+import MLAccordion from '../MLAccordion/MLAccordion';
 import MLCard from '../MLCard/MLCard';
 import MLButton from '../MLButton/MLButton';
 import MarkerOrb from '../MarkerOrb/MarkerOrb.js';
@@ -28,6 +29,49 @@ class _Root extends Component {
       <div className={ css['container']}>
         <h1>ML CDL React Kitchen Sink</h1>
         <div className={css['demoWrap']}>
+          <h2>MarkerOrb</h2>
+          <div className={css['markerWrap']}>
+            {['#ffafaf','#ffc196','#faf2a9','#acdba2','#aee5d3','#a2d6dd','#b0daff','#e5c6e3','#edb0ce','#dddddd'].map(function(color,i){
+              return (<MarkerOrb className={ css['marker'] } key={ i } markerColor={ color } noX={ true } isSelected={ false } />)
+            })
+        }
+          </div>
+        </div>
+        <div className={css['demoWrap']}>
+          <h2>Menu</h2>
+          <MLMenu 
+            itemClicked={ function(c){console.log('clicked item',c)} } 
+            menuTitle='test!'
+            menuArray={['beans','baby foxes']}/>
+        <pre>{`
+<MLMenu 
+  itemClicked={ function(c){console.log('clicked item',c)} } 
+  menuTitle='test!'
+  menuArray={['beans','baby foxes']}/>
+        `}</pre>
+        </div>
+        <div className={css['demoWrap']}>
+          <h2>Accordion</h2>
+          <MLAccordion
+            title='Floop'
+            content='Scoobers' />
+        </div>
+        <div className={css['demoWrap']}>
+          <h2>Cards</h2>
+          <MLCard 
+            title="The Gear Wars" 
+            content="It was never really about the gears." 
+            button={<MLButton title='Primary ' btnClass='primary' />}
+            />
+        <pre>{`
+<MLCard 
+  title="The Gear Wars" 
+  content="It was never really about the gears." 
+  button={<MLButton title='Primary ' btnClass='primary' />}
+  />
+        `}</pre>
+        </div>
+        <div className={css['demoWrap']}>
           <h2>Icons</h2>
           <pre>{`
 import MLIcon from 'ml-react-cdl-icons';
@@ -46,36 +90,10 @@ import MLIcon from 'ml-react-cdl-icons';
               return (<span className={css['iconWrap']} key={i}><MLIcon iconType={title} iconTitle={title} /><span className={ css['iconName'] }>{title}</span></span> )
             })
           }
+          <pre>{`
+<MarkerOrb key={ obj.globalId } markerColor={ obj.vstColor } globalId={ obj.globalId } clickFunc={ that._selectHighlightColor } isSelected={ selectedMarkerId == obj.globalId } />
+          `}</pre>
           </div>
-        </div>
-        <div className={css['demoWrap']}>
-          <h2>Menu</h2>
-          <MLMenu 
-            itemClicked={ function(c){console.log('clicked item',c)} } 
-            menuTitle='test!'
-            menuArray={['beans','baby foxes']}/>
-        <pre>{`
-<MLMenu 
-  itemClicked={ function(c){console.log('clicked item',c)} } 
-  menuTitle='test!'
-  menuArray={['beans','baby foxes']}/>
-        `}</pre>
-        </div>
-        <div className={css['demoWrap']}>
-          <h2>Cards</h2>
-          <MLCard 
-            title="Fleem" 
-            content="RealFakeDoors.com" 
-            button={<MLButton title='Primary ' btnClass='primary' />}
-            />
-        <pre>{`
-<MLCard 
-  title="Fleem" 
-  content="RealFakeDoors.com" 
-  button={<MLButton title='Primary ' btnClass='primary' />}
-  />
-        `}</pre>
-          
         </div>
         <div className={css['demoWrap']}>
           <h2>Buttons</h2>
