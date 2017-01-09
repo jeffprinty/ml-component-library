@@ -29,7 +29,7 @@ class _Root extends Component {
       <div className={ css['container']}>
         <h1>ML CDL React Kitchen Sink</h1>
         <div className={css['demoWrap']}>
-          <h2>VitalSource Ereader</h2>
+          <h2>VitalSource Embedded Snippet eReader (Standard)</h2>
           <div className={ css['eSnippetContainer'] }>
             <ESnippet
               vbid={ '9780203370360'}
