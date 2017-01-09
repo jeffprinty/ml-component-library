@@ -6,7 +6,7 @@ import MLAccordion from '../MLAccordion/MLAccordion';
 import MLCard from '../MLCard/MLCard';
 import MLButton from '../MLButton/MLButton';
 import MarkerOrb from '../MarkerOrb/MarkerOrb.js';
-import ESnippet from 'ml-esnippet';
+import ESnippet from '../esnippet.js';
 import '../../assets/styles/fonts.css';
 
 import css from './_root.css';
