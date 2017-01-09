@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import css from './mlAccordion.css';
 
-import MLIcon from '../MLIcon/MLIcon';
+import MLIcon from 'ml-react-cdl-icons';
 
 class MLAccordion extends Component {
   constructor(props) {
@@ -34,9 +34,9 @@ class MLAccordion extends Component {
         <div className={ css["cardTitle"] + ' ' + css['divider'] } onClick={ this._openDrawer } >
           <span className={ css['titleIcon'] }>
             { drawerOpen ?
-              <MLIcon iconType='plus' iconTitle='Expand' />
+              <MLIcon iconType='minus' iconTitle='Collapse' iconFill='#666666' />
               :
-              <MLIcon iconType='minus' iconTitle='Collapse' />
+              <MLIcon iconType='plus' iconTitle='Expand' iconFill='#666666' />
             }
           </span>
           <span className={ css['titleText'] }>{ title }</span>
@@ -56,7 +56,6 @@ MLAccordion.defaultProps = {
 
 MLAccordion.propTypes = {
   title: PropTypes.string.isRequired,
-  content: PropTypes.string.isRequired,
 };
 
 export default MLAccordion;

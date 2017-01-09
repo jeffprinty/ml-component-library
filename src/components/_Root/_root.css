@@ -103,3 +103,6 @@ vertical-align: middle;
 .marker {
   display: inline;  
 }
+.eSnippetContainer {
+  height: 400px;
+}

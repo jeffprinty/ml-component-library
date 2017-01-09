@@ -6,7 +6,7 @@ import MLAccordion from '../MLAccordion/MLAccordion';
 import MLCard from '../MLCard/MLCard';
 import MLButton from '../MLButton/MLButton';
 import MarkerOrb from '../MarkerOrb/MarkerOrb.js';
-
+import ESnippet from 'ml-esnippet';
 import '../../assets/styles/fonts.css';
 
 import css from './_root.css';
@@ -29,6 +29,16 @@ class _Root extends Component {
       <div className={ css['container']}>
         <h1>ML CDL React Kitchen Sink</h1>
         <div className={css['demoWrap']}>
+          <h2>VitalSource Ereader</h2>
+          <div className={ css['eSnippetContainer'] }>
+            <ESnippet
+              vbid={ '9780203370360'}
+              cfi={ '6/150'}
+              start={ '/4/6/2'}
+              stop={ '/4/6/8/4'} />
+          </div>
+        </div>
+        <div className={css['demoWrap']}>
           <h2>MarkerOrb</h2>
           <div className={css['markerWrap']}>
             {['#ffafaf','#ffc196','#faf2a9','#acdba2','#aee5d3','#a2d6dd','#b0daff','#e5c6e3','#edb0ce','#dddddd'].map(function(color,i){
@@ -36,6 +46,9 @@ class _Root extends Component {
             })
         }
           </div>
+          <pre>{`
+<MarkerOrb key={ obj.globalId } markerColor={ obj.vstColor } globalId={ obj.globalId } clickFunc={ that._selectHighlightColor } isSelected={ selectedMarkerId == obj.globalId } />
+          `}</pre>
         </div>
         <div className={css['demoWrap']}>
           <h2>Menu</h2>
@@ -61,7 +74,7 @@ class _Root extends Component {
           <MLCard 
             title="The Gear Wars" 
             content="It was never really about the gears." 
-            button={<MLButton title='Primary ' btnClass='primary' />}
+            button={<MLButton title='Learn More ' btnClass='primary' />}
             />
         <pre>{`
 <MLCard 
@@ -90,9 +103,6 @@ import MLIcon from 'ml-react-cdl-icons';
               return (<span className={css['iconWrap']} key={i}><MLIcon iconType={title} iconTitle={title} /><span className={ css['iconName'] }>{title}</span></span> )
             })
           }
-          <pre>{`
-<MarkerOrb key={ obj.globalId } markerColor={ obj.vstColor } globalId={ obj.globalId } clickFunc={ that._selectHighlightColor } isSelected={ selectedMarkerId == obj.globalId } />
-          `}</pre>
           </div>
         </div>
         <div className={css['demoWrap']}>
