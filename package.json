@@ -45,6 +45,6 @@
   },
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.js",
-    "build": "webpack"
+    "build": "webpack -p --config webpack.production.config.js"
   }
 }
