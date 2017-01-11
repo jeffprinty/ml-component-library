@@ -29,6 +29,7 @@ class _Root extends Component {
 
   _clickToggle = (val) => {
     console.log('current toggle val', val);
+    this.setState({toggleA: !this.state.toggleA})
   }
 
   render() {
@@ -48,18 +49,30 @@ class _Root extends Component {
 <MLToggle checked={ true } disabled={ true } onChange={ this._clickToggle } />  
           `}</pre>
         </div>
-        <div className={css['demoWrap']}>
+        <div className={css['demoWrap']} style={{display: 'none'}}>
           <MLAlert alertType='info' icon='warning' text='Alert!' />
         </div>
         <div className={css['demoWrap']}>
-          <h2>VitalSource Embedded Snippet eReader (Standard)</h2>
-          <div className={ css['eSnippetContainer'] }>
-            <ESnippet
-              vbid={ '9780203370360'}
-              cfi={ '6/150'}
-              start={ '/4/6/2'}
-              stop={ '/4/6/8/4'} />
-          </div>
+          <h2>VitalSource Embedded Snippet eReader ({ this.state.toggleA ? 'Enhanced' : 'Standard' } )</h2>
+          { this.state.toggleA ?
+            <div className={ css['eSnippetContainer'] }>
+              <ESnippet
+                vbid={ '9780203370360'}
+                cfi={ '6/150'}
+                start={ '/4/6/2'}
+                stop={ '/4/6/8/4'}
+                highlightsEnabled={true} />
+            </div>
+            :
+              <div className={ css['eSnippetContainer'] }>
+                <ESnippet
+                  vbid={ '9780203370360'}
+                  cfi={ '6/150'}
+                  start={ '/4/6/2'}
+                  stop={ '/4/6/8/4'}
+                  highlightsEnabled={false} />
+              </div>
+          }
         </div>
         <div className={css['demoWrap']}>
           <h2>MarkerOrb</h2>

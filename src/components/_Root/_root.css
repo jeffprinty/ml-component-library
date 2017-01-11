@@ -105,4 +105,5 @@ vertical-align: middle;
 }
 .eSnippetContainer {
   height: 400px;
+  position: relative;
 }
