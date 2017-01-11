@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 
 import MLIcon from '../MLIcon/MLIcon';
 import MLMenu from '../MLMenu/MLMenu';
+import MLAlert from '../MLAlert/MLAlert';
 import MLAccordion from '../MLAccordion/MLAccordion';
 import MLCard from '../MLCard/MLCard';
+import MLToggle from '../MLToggle/MLToggle';
 import MLButton from '../MLButton/MLButton';
 import MarkerOrb from '../MarkerOrb/MarkerOrb.js';
 import ESnippet from '../esnippet.js';
@@ -16,10 +18,17 @@ let iconArray = ['alert_outline','alert','arrow_left','arrow_right','bar_chart',
 class _Root extends Component {
   constructor() {
     super();
+    this.state = {
+      toggleA: true
+    }
   }
 
   _getIcons = () => {
     //return (componentArray);
+  }
+
+  _clickToggle = (val) => {
+    console.log('current toggle val', val);
   }
 
   render() {
@@ -28,6 +37,20 @@ class _Root extends Component {
     return (
       <div className={ css['container']}>
         <h1>ML CDL React Kitchen Sink</h1>
+        <div className={css['demoWrap']}>
+          <h2>Toggle Switch</h2>
+          <MLToggle checked={ this.state.toggleA } onChange={ this._clickToggle } />
+          <h3>Disabled switches</h3>
+          <MLToggle checked={ true } disabled={ true } onChange={ this._clickToggle } />
+          <MLToggle checked={ false } disabled={ true } onChange={ this._clickToggle } />
+          <div ref='toggleVal'>{ this.state.toggleA }</div>
+          <pre>{`
+<MLToggle checked={ true } disabled={ true } onChange={ this._clickToggle } />  
+          `}</pre>
+        </div>
+        <div className={css['demoWrap']}>
+          <MLAlert alertType='info' icon='warning' text='Alert!' />
+        </div>
         <div className={css['demoWrap']}>
           <h2>VitalSource Embedded Snippet eReader (Standard)</h2>
           <div className={ css['eSnippetContainer'] }>
