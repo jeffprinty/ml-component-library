@@ -53,7 +53,7 @@ class _Root extends Component {
           <MLAlert alertType='info' icon='warning' text='Alert!' />
         </div>
         <div className={css['demoWrap']}>
-          <h2>VitalSource Embedded Snippet eReader ({ this.state.toggleA ? 'Enhanced' : 'Standard' } )</h2>
+          <h2>VitalSource Embedded Snippet eReader ({ this.state.toggleA ? 'Standard' : 'Enhanced' } )</h2>
           { this.state.toggleA ?
             <div className={ css['eSnippetContainer'] }>
               <ESnippet
