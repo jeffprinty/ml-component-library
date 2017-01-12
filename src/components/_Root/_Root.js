@@ -39,20 +39,6 @@ class _Root extends Component {
       <div className={ css['container']}>
         <h1>ML CDL React Kitchen Sink</h1>
         <div className={css['demoWrap']}>
-          <h2>Toggle Switch</h2>
-          <MLToggle checked={ this.state.toggleA } onChange={ this._clickToggle } />
-          <h3>Disabled switches</h3>
-          <MLToggle checked={ true } disabled={ true } onChange={ this._clickToggle } />
-          <MLToggle checked={ false } disabled={ true } onChange={ this._clickToggle } />
-          <div ref='toggleVal'>{ this.state.toggleA }</div>
-          <pre>{`
-<MLToggle checked={ true } disabled={ true } onChange={ this._clickToggle } />  
-          `}</pre>
-        </div>
-        <div className={css['demoWrap']} style={{display: 'none'}}>
-          <MLAlert alertType='info' icon='warning' text='Alert!' />
-        </div>
-        <div className={css['demoWrap']}>
           <h2>VitalSource Embedded Snippet eReader ({ this.state.toggleA ? 'Standard' : 'Enhanced' } )</h2>
           { this.state.toggleA ?
             <div className={ css['eSnippetContainer'] }>
@@ -73,6 +59,20 @@ class _Root extends Component {
                   highlightsEnabled={false} />
               </div>
           }
+        </div>
+        <div className={css['demoWrap']}>
+          <h2>Toggle Switch</h2>
+          <MLToggle checked={ this.state.toggleA } onChange={ this._clickToggle } />
+          <h3>Disabled switches</h3>
+          <MLToggle checked={ true } disabled={ true } onChange={ this._clickToggle } />
+          <MLToggle checked={ false } disabled={ true } onChange={ this._clickToggle } />
+          <div ref='toggleVal'>{ this.state.toggleA }</div>
+          <pre>{`
+<MLToggle checked={ true } disabled={ true } onChange={ this._clickToggle } />  
+          `}</pre>
+        </div>
+        <div className={css['demoWrap']} style={{display: 'none'}}>
+          <MLAlert alertType='info' icon='warning' text='Alert!' />
         </div>
         <div className={css['demoWrap']}>
           <h2>MarkerOrb</h2>
