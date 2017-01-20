@@ -64,7 +64,7 @@ const webpackConfig = {
       {
         test: /\.jsx?$/,
         include: [
-          path.resolve(__dirname, 'src/components'),
+          path.resolve(__dirname, 'src'),
           path.resolve(__dirname, 'example/index.js')
         ],
         loader: 'babel'
@@ -72,8 +72,8 @@ const webpackConfig = {
       {
         test: /\.css$/,
         include: [
-          path.resolve(__dirname, 'src/assets/styles'),
-          path.resolve(__dirname, 'src/components')
+          path.resolve(__dirname, 'assets/styles'),
+          path.resolve(__dirname, 'src')
         ],
         loader: combineLoaders([
           {
@@ -110,7 +110,7 @@ const webpackConfig = {
       {
         test: /\.ttf$/,
         include: [
-          path.resolve(__dirname, 'src/assets/fonts')
+          path.resolve(__dirname, 'assets/fonts')
         ],
         loader: 'file',
         query: {
@@ -122,7 +122,7 @@ const webpackConfig = {
       {
         test: /\.png$/,
         include: [
-          path.resolve(__dirname, 'src/assets/images')
+          path.resolve(__dirname, 'assets/images')
         ],
         loader: 'file',
         query: {
@@ -134,7 +134,7 @@ const webpackConfig = {
       {
         test: /\.svg$/,
         include: [
-          path.resolve(__dirname, 'src/assets/images')
+          path.resolve(__dirname, 'assets/images')
         ],
         loader: 'file',
         query: {
@@ -172,8 +172,8 @@ const webpackConfig = {
     return [
       require('postcss-smart-import')({
         addDependencyTo: _webpack,
-        root: path.resolve(__dirname, 'src'),
-        path: ['assets', 'components'],
+        root: path.resolve(__dirname, './'),
+        path: ['assets', 'src'],
         skipDuplicates: false
       }),
       require('postcss-cssnext')()
@@ -182,8 +182,8 @@ const webpackConfig = {
 
   resolve: {
     alias: {
-      Images: path.resolve(__dirname, 'src/assets/images'),
-      Styles: path.resolve(__dirname, 'src/assets/styles'),
+      Images: path.resolve(__dirname, 'assets/images'),
+      Styles: path.resolve(__dirname, 'assets/styles'),
     },
     extensions: ['', '.js', '.jsx']
   }
