@@ -8,14 +8,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 const webpackConfig = {
-  context: path.resolve(__dirname, 'src'),
+  context: path.resolve(__dirname, './'),
 
   devServer: {
     https: false,
     host: '0.0.0.0',
     port: (process.env.PORT || '8000'),
 
-    contentBase: path.resolve(__dirname, 'src'),
+    contentBase: path.resolve(__dirname, './'),
     historyApiFallback: true,
     compress: true,
 
@@ -47,7 +47,7 @@ const webpackConfig = {
   entry: {
     app: [
       'react-hot-loader/patch',
-      './index.js'
+      './example/index.js'
     ]
   },
   output: {
@@ -65,7 +65,7 @@ const webpackConfig = {
         test: /\.jsx?$/,
         include: [
           path.resolve(__dirname, 'src/components'),
-          path.resolve(__dirname, 'src/index.js')
+          path.resolve(__dirname, 'example/index.js')
         ],
         loader: 'babel'
       },
@@ -151,7 +151,7 @@ const webpackConfig = {
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
     }),
     new HtmlWebpackPlugin({
-      template: 'index.html',
+      template: './example/index.html',
       inject: true,
       hash: true,
       cache: true,

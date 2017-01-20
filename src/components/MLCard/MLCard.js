@@ -53,6 +53,7 @@ MLCard.defaultProps = {
 MLCard.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
+  button: PropTypes.element
 };
 
 export default MLCard;

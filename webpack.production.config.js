@@ -11,13 +11,13 @@ const webpackConfig = {
 
   entry: {
     app: [
-      './index.js'
+      '../index.js'
     ]
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
-    filename: 'writers-help-search.js',
+    filename: 'ml-cdl-components.js',
     library: 'Library',
     libraryTarget: 'umd',
     umdNamedDefine: true
