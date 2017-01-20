@@ -28,7 +28,11 @@ class MLToggle extends Component {
     let that = this;
     return (
       <label className={ css["switch"] }>
-        <input onChange={ this.clickCheckbox } type="checkbox" disabled={ disabled } checked={ this.state.checked } />
+        <input 
+          onChange={ this.clickCheckbox } 
+          type="checkbox" 
+          disabled={ disabled } 
+          checked={ this.state.checked } />
         <div className={ css["slider"] + ' ' + css["round"] }></div>
       </label>
     )
@@ -42,7 +46,9 @@ MLToggle.defaultProps = {
 }
 
 MLToggle.propTypes = {
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired,
+  checked: PropTypes.bool,
+  disabled: PropTypes.bool
 };
 
 export default MLToggle;
