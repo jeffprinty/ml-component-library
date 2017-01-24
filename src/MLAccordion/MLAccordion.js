@@ -7,45 +7,38 @@ class MLAccordion extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      drawerOpen: false
+      isOpen: false
     }
   }
 
   _openDrawer = (e) => {
     this.setState({ 
-      drawerOpen: !this.state.drawerOpen
-    })
-  }
-  _clickItem = (click) => {
-    this.props.itemClicked(click);
-    this.setState({
-      menuTitle: click,
-      drawerOpen: false,
+      isOpen: !this.state.isOpen
     })
   }
 
   render() {
     const { title, content } = this.props;
-    const { drawerOpen } = this.state;
+    const { isOpen } = this.state;
     return (
       <div className={ css["card"] }>
         <div 
           role='tab' 
           tabIndex='0'
-          aria-expanded={ drawerOpen }
+          aria-expanded={ isOpen }
           className={ css["cardTitle"] + ' ' + css['divider'] } 
           onKeyDown={ this._openDrawer } 
           onClick={ this._openDrawer } >
           <span className={ css['titleIcon'] }>
-            { drawerOpen ?
-              <MLIcon iconType='minus' iconTitle='Collapse' iconFill='#666666' />
+            { isOpen ?
+              <MLIcon type='minus' title='Collapse' fill='#666666' />
               :
-              <MLIcon iconType='plus' iconTitle='Expand' iconFill='#666666' />
+              <MLIcon type='plus' title='Expand' fill='#666666' />
             }
           </span>
           <span className={ css['titleText'] }>{ title }</span>
         </div>
-        <div style={{ display: drawerOpen ? 'block' : 'none' }} className={ css['content'] }>
+        <div style={{ display: isOpen ? 'block' : 'none' }} className={ css['content'] }>
           { content }
         </div>
       </div>
@@ -60,6 +53,7 @@ MLAccordion.defaultProps = {
 
 MLAccordion.propTypes = {
   title: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired
 };
 
 export default MLAccordion;

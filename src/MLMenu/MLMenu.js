@@ -6,14 +6,14 @@ class MLMenu extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      menuTitle: props.menuTitle,
-      menuOpen: false
+      title: props.title,
+      isOpen: false
     }
   }
 
   _openMenu = () => {
     this.setState({ 
-      menuOpen: !this.state.menuOpen
+      isOpen: !this.state.isOpen
     })
     console.log('click',this.state);
   }
@@ -21,19 +21,19 @@ class MLMenu extends Component {
     console.log(click);
     this.props.itemClicked(click);
     this.setState({
-      menuTitle: click,
-      menuOpen: false,
+      title: click,
+      isOpen: false,
     })
   }
 
   render() {
-    const { menuTitle, menuOpen } = this.state;
-    const { menuArray } = this.props;
+    const { title, isOpen } = this.state;
+    const { itemArray } = this.props;
     let that = this;
     return (
       <div className={ css["dropdown"] }>
         <div className={ css["dropdownTitle"] } role='tab' onClick={ this._openMenu }>
-          { menuTitle } 
+          { title } 
           <span className={ css['chevron'] }>
             <svg width="8px" height="6px" viewBox="0 0 8 6" version="1.1" xmlns="http://www.w3.org/2000/svg">
               <g>
@@ -42,9 +42,9 @@ class MLMenu extends Component {
             </svg>
           </span>
         </div>
-        <ul className={ !menuOpen ? css['dropdownContent'] : css['dropdownOpen'] } style={{ left: '-15px' }}>
+        <ul className={ !isOpen ? css['dropdownContent'] : css['dropdownOpen'] } style={{ left: '-15px' }}>
           { 
-            menuArray.map(function(itemName, i){
+            itemArray.map(function(itemName, i){
               let clickItem = that._clickItem.bind(that, itemName)
               return (
                 <li 
@@ -66,12 +66,12 @@ class MLMenu extends Component {
 }
 
 MLMenu.defaultProps = {
-  menuArray: []
+  itemArray: []
 }
 
 MLMenu.propTypes = {
-  menuTitle: PropTypes.string.isRequired,
-  menuArray: PropTypes.array.isRequired,
+  title: PropTypes.string.isRequired,
+  itemArray: PropTypes.array.isRequired,
   itemClicked: PropTypes.func.isRequired,
 };
 

@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
 const icons = {
-   	cancel: (<polygon points="19.82 5.59 18.41 4.18 12 10.59 5.59 4.18 4.18 5.59 10.59 12 4.18 18.41 5.59 19.82 12 13.41 18.41 19.82 19.82 18.41 13.41 12 19.82 5.59"/>),
     alert_outline: (
       <g>
         <rect x="11" y="10" width="2" height="4"/>
@@ -16,7 +15,7 @@ const icons = {
       <polygon points="21 11 5.84 11 13.33 3.52 11.92 2.1 3.43 10.59 3.43 10.59 2.02 12 3.43 13.41 11.92 21.9 13.33 20.48 5.84 13 21 13 21 11" />
     ),
     arrow_right: (
-      <polygon points="3.02 11 18.17 11 10.68 3.52 12.1 2.1 20.58 10.59 20.58 10.59 22 12 20.58 13.41 12.1 21.9 10.68 20.48 18.17 13 3.02 13 3.02 11"/>
+      <polygon points="3.02 11 18.17 11 10.68 3.52 12.1 2.1 20.58 10.59 20.58 10.59 22 12 20.58 13.41 12.1 21.9 10.68 20.48 18.17 13 3.02 13 3.02 11" />
     ),
     bar_chart: (
       <g>
@@ -54,6 +53,7 @@ const icons = {
         <rect x="7" y="16" width="2" height="2"/>
       </g>
     ),
+    cancel: (<polygon points="19.82 5.59 18.41 4.18 12 10.59 5.59 4.18 4.18 5.59 10.59 12 4.18 18.41 5.59 19.82 12 13.41 18.41 19.82 19.82 18.41 13.41 12 19.82 5.59"/>),
     caret_down: (
       <polygon points="2 6 12.02 18.02 22.04 6 2 6" fillRule="evenodd"/>
     ),
@@ -162,6 +162,12 @@ const icons = {
         <polygon points="3 17.98 3 21 5.97 21 18.17 8.82 15.14 5.68 3 17.98" fillRule="evenodd"/>
       </g>
     ),
+    eraser: (
+      <g>
+        <polygon points="9.58 20.98 20.96 20.98 20.96 18.98 11.46 18.98 9.58 20.98"/>
+        <path d="M21.78,7.9,16.25,2.37a1.19,1.19,0,0,0-1.68,0L7.88,9.06,2.46,14.47a1.19,1.19,0,0,0,0,1.68L7.29,21h3.08l4.75-4.75,6.65-6.65A1.19,1.19,0,0,0,21.78,7.9ZM9.79,19H8.18L4.28,15.21l5-4.78L13.84,15Z"/>
+      </g>
+    ),
     expand: (
       <g>
         <path d="M19,19H5V5h6.92l-2-2H4A1,1,0,0,0,3,4V20a1,1,0,0,0,1,1H20a1,1,0,0,0,1-1V14l-2-2Z" fillRule="evenodd"/>
@@ -212,6 +218,16 @@ const icons = {
     ),
     home: (
       <polygon points="20.92 12 11.94 3.02 2.96 12 5 12 5 21 10 21 10 14 14 14 14 21 19 21 19 12 20.92 12"/>
+    ),
+    info: (
+      <path d="M12,2c-5.486,0 -10,4.514 -10,10c0,5.486 4.514,10 10,10c5.486,0 10,-4.514 10,-10c0,-5.486 -4.514,-10 -10,-10Zm-1,15l2,0l0,-7.253l-2,0l0,7.253Zm2,-10.253l-2,0l0,2l2,0l0,-2Z"/>
+    ),
+    info_outline: (
+      <g>
+        <path d="M12,2c-5.486,0 -10,4.514 -10,10c0,5.486 4.514,10 10,10c5.486,0 10,-4.514 10,-10c0,-5.486 -4.514,-10 -10,-10Zm0,18c-4.389,0 -8,-3.611 -8,-8c0,-4.389 3.611,-8 8,-8c4.389,0 8,3.611 8,8c0,4.389 -3.611,8 -8,8l0,0Z" fillRule="nonzero"/>
+        <rect height="7.253" width="2" x="11" y="9.747"/>
+        <rect height="2" width="2" x="11" y="6.747"/>
+      </g>
     ),
     item_add: (
       <g>
@@ -277,6 +293,12 @@ const icons = {
         <rect x="3" y="17" width="18" height="3"/>
       </g>
     ),
+    microphone: (
+      <g>
+        <rect x="9.14" y="2.97" width="5.72" height="11.18" rx="2.86" ry="2.86"/>
+        <path d="M19.08,11.15a1,1,0,1,0-2,0,5.05,5.05,0,1,1-10.11,0,1,1,0,0,0-2,0,7.1,7.1,0,0,0,6.06,7v2a1,1,0,0,0,2,0v-2A7.1,7.1,0,0,0,19.08,11.15Z"/>
+      </g>
+    ), 
     minimize: (
       <g>
         <path d="M20,3H4A1,1,0,0,0,3,4V20a1,1,0,0,0,1,1H20a1,1,0,0,0,1-1V4A1,1,0,0,0,20,3ZM19,19H5V5H19Z"/>
@@ -380,6 +402,19 @@ const icons = {
         <path d="M10.55,7.47A3.75,3.75,0,0,0,5.71,3.26L7.14,4.68A1.74,1.74,0,1,1,4.68,7.14L3.26,5.72a3.75,3.75,0,0,0,4.21,4.84l9.72,9.72a2.18,2.18,0,0,0,3.09-3.09Zm8.65,11.74a.76.76,0,1,1,0-1.08A.76.76,0,0,1,19.21,19.21Z"/>
       </g>
     ),
+    trash: (
+      <g>
+        <path d="M6.224,20.977l11.644,0c0.702,-0.023 1.256,-0.341 1.255,-0.721l0.884,-13.689l-16.014,0l0.897,13.689c0,0.395 0.602,0.721 1.334,0.721Z"/>
+        <path d="M21,4.963c0,-0.25 -0.202,-0.453 -0.452,-0.453l-17.093,0c-0.25,0 -0.452,0.203 -0.452,0.453l0,0.905c0,0.25 0.202,0.453 0.452,0.453l17.093,0c0.25,0 0.452,-0.203 0.452,-0.453l0,-0.905Z"/>
+        <path d="M12.018,3.251c0.984,0 1.783,0.636 1.783,1.418c0,0.783 -3.567,0.783 -3.567,0c0,-0.782 0.799,-1.418 1.784,-1.418Z"/>
+      </g>
+    ),
+    trending: (
+      <g>
+        <path d="M28.493,10.984l-10.888,10.855l-5.911,-5.958l-8.68,8.661l-1.857,-1.861l10.546,-10.523l5.912,5.958l9.022,-8.994l1.856,1.862Z"/>
+        <path d="M21.847,7.486l8.51,0l0,8.412l-8.51,-8.412Z"/>
+      </g>
+    ),
     upload: (
       <g>
         <polygon points="19 14 19 18 5 18 5 14 3 14 3 18 3 20 5.5 20 19.5 20 21 20 21 18 21 14 19 14" fillRule="evenodd"/>
@@ -410,13 +445,9 @@ const icons = {
   };
 class MLIcon extends Component {
   render() {
-    const { title, type, width, height, fill } = this.props;
+    const { title, type, width, height, fill, viewBox, className } = this.props;
     return (
-      <svg 
-        width={ width } 
-        height={ height } 
-        viewBox={"0 0 24 24"} 
-        fillRule={ fill }>
+      <svg className={ className } width={ width } height={ height } viewBox={ viewBox } fill={ fill }>
         <title>{ title }</title>
         { icons[type] }
       </svg>
@@ -426,15 +457,20 @@ class MLIcon extends Component {
 MLIcon.defaultProps = {
     width: "24",
     height: "24",
-    fill: "#ffffff"
+    viewBox: "0 0 24 24",
+    fill: "#ffffff",
+    className: ''
   }
+MLIcon.listIcons = Object.keys(icons);
 
 MLIcon.propTypes = {
   type: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   fill: PropTypes.string,
   width: PropTypes.string,
-  height: PropTypes.string
+  height: PropTypes.string,
+  viewBox: PropTypes.string,
+  className: PropTypes.string
 };
 
 export default MLIcon;

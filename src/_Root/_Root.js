@@ -16,7 +16,6 @@ import Highlight from 'react-highlight';
 
 import css from './_root.css';
 
-let iconArray = ['alert_outline','alert','arrow_left','arrow_right','bar_chart','book','bookmark_outline','bookmark','box','calendar','cancel','caret_down','check','checkbox','chevron_down','chevron_left','chevron_right','chevron_up','clipboard','clock','comment_highlight','comment_microphone','comment_question','comment_text','comment_thumbs_up','comment','cursor','dock_left','dock_right','dock_top','document','download','edit','expand','grid_4','grid_9','head','heart_outline','heart','help_outline','help','highlight','home','item_add','item_copy','item_edit','item_remove','link','list_left','list_right','maximize','menu','minimize','minus','more','mortar_board','move','not','pause','person','play','plus','pointer_outline','pointer','print','search','spreadsheet','stop','text_size','thumbs_down','thumbs_up','tools','upload','video','x','zoom_in','zoom_out'];
 
 class _Root extends Component {
   constructor(props) {
@@ -31,6 +30,7 @@ class _Root extends Component {
   }
 
   render() {
+    console.log( 'floop',MLIcon.listIcons );
     return (
       <div className={ css['container']}>
         <h1>ML CDL React Kitchen Sink</h1>
@@ -80,29 +80,40 @@ class _Root extends Component {
           <MLAlert alertType='info' icon='warning' text='Alert!' />
         </div>
         <div className={css['demoWrap']}>
-
           <h2>MarkerOrb</h2>
-          <div className={css['markerWrap']} role='radiogroup'>
-            {
-              ['#ffafaf','#ffc196','#faf2a9','#acdba2','#aee5d3','#a2d6dd','#b0daff','#e5c6e3','#edb0ce','#dddddd']
-                .map(function(color,i){
-                  return (
-                    <MarkerOrb 
-                      className={ css['marker'] } 
-                      key={ i } 
-                      label={ color }
-                      onClick={ (data) => console.log(data) }
-                      markerColor={ color } 
-                      noX={ true } 
-                      isSelected={ false } />
-                    )
+          <section className={css['demoRow']}>
+            <div className={css['demoExample']}>
+              <div className={css['markerWrap']} role='radiogroup'>
+                {
+                  ['#ffafaf','#ffc196','#faf2a9','#acdba2','#aee5d3','#a2d6dd','#b0daff','#e5c6e3','#edb0ce','#dddddd']
+                    .map(function(color,i){
+                      return (
+                        <MarkerOrb 
+                          className={ css['marker'] } 
+                          key={ i } 
+                          label={ color }
+                          onClick={ (data) => console.log(data) }
+                          markerColor={ color } 
+                          noX={ true } 
+                          isSelected={ false } />
+                        )
+                    }
+                  )
                 }
-              )
-            }
-          </div>
-          <pre>{`
-<MarkerOrb key={ obj.globalId } markerColor={ obj.vstColor } globalId={ obj.globalId } onClick={ that._selectHighlightColor } isSelected={ selectedMarkerId == obj.globalId } />
-          `}</pre>
+              </div>
+            </div>
+            <div className={css['demoCode']}>
+              <Highlight className='javascript'>
+{`<MarkerOrb 
+  key={ obj.globalId } 
+  markerColor={ obj.vstColor } 
+  globalId={ obj.globalId } 
+  onClick={ that._selectHighlightColor } 
+  isSelected={ selectedMarkerId == obj.globalId } />`}
+              </Highlight>
+            </div>
+
+          </section>
         </div>
         <div className={css['demoWrap']}>
           <h2>Menu</h2>
@@ -110,15 +121,15 @@ class _Root extends Component {
             <div className={css['demoExample']}>
               <MLMenu 
                 itemClicked={ function(c){console.log('clicked item',c)} } 
-                menuTitle='test!'
-                menuArray={['beans','baby foxes']}/>
+                title='test!'
+                itemArray={['beans','baby foxes']}/>
             </div>
             <div className={css['demoCode']}>
               <Highlight className='javascript'>{
 `<MLMenu 
-  itemClicked={ () => {)} } 
-  menuTitle='test!'
-  menuArray={['beans','baby foxes']}/>`}
+  itemClicked={ () => {} } 
+  title='test!'
+  itemArray={['beans','baby foxes']}/>`}
               </Highlight>
             </div>
           </section>
@@ -135,8 +146,7 @@ class _Root extends Component {
               <Highlight className='javascript'>{
 `<MLAccordion
   title="Here's the title"
-  content='The content goes here' />
-              `}</Highlight>
+  content='The content goes here' />`}</Highlight>
             
             </div>
           </section>
@@ -180,8 +190,8 @@ import MLIcon from 'ml-react-cdl-icons';
           `}
           </Highlight>
           <div className={css['iconGrid']}>
-          { iconArray.map(function(title,i){
-              return (<span className={css['iconWrap']} key={i}><MLIcon type={title} title={title} /><span className={ css['iconName'] }>{title}</span></span> )
+          { MLIcon.listIcons.map(function(title,i){
+              return (<span className={css['iconWrap']} key={i}><MLIcon fill='black' type={title} title={title} /><span className={ css['iconName'] }>{title}</span></span> )
             })
           }
           </div>

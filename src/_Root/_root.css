@@ -117,6 +117,13 @@ vertical-align: middle;
   align-self: flex-start;
 
 }
+.demoExample {
+  padding: 5px;
+}
+.demoCode {
+  overflow-x: auto;
+  
+}
 pre {
   margin: 0;
 }

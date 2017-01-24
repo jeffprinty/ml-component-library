@@ -16,26 +16,28 @@ PRs greatly appreciated.
 ## MLMenu
 ```
 <MLMenu 
-    itemClicked={ function(c){console.log('clicked item',c)} } 
-    menuTitle='test!'
-    menuArray={['beans','baby foxes']}/>
+  itemClicked={ function(c){console.log('clicked item',c)} } 
+  title='test!'
+  itemArray={['beans','baby foxes']}/>
 ```
 ## MLIcon
 ```
 <MLIcon 
-  iconType={ 'item_edit' } 
   className={ css['icon'] }
-  iconWidth="24",
-  iconHeight="24",
+  type='item_edit' 
+  width="24",
+  height="24",
   viewBox="0 0 24 24",
-  iconFill="#ffffff",
-  iconTitle="Accessible title"
-/>
+  fill="#ffffff",
+  title="Accessible title" />
 ```
 
 ## MLToggle
 ```
-<MLToggle checked={ true } disabled={ true } onChange={ this._clickToggle } />  
+<MLToggle 
+  checked={ true } 
+  disabled={ true } on
+  Change={ this._clickToggle } />  
 ```
 
 ## MLCard
