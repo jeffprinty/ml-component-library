@@ -18,12 +18,10 @@ class _Root extends Component {
     }
   }
   _clickToggle(val) {
-    console.log('current toggle val', val);
     this.setState({toggleA: !this.state.toggleA});
   }
 
   render() {
-    console.log( 'floop',MLIcon.listIcons );
     return (
       <div className={ css['container']}>
         <h1>ML CDL React Kitchen Sink</h1>

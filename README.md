@@ -13,6 +13,16 @@ PRs greatly appreciated.
 * Package these as modules for NPM installation
 * Add a11y requirements
 
+### Install 
+```
+npm install ml-react-components --save --registry http://npm.macmillantech.com:8080
+
+```
+### Consume
+```
+import { MLIcon, MLMenu } from '../MLComponents'
+```
+
 ## MLMenu
 ```
 <MLMenu 
