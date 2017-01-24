@@ -1,6 +1,6 @@
 {
   "name": "ml-react-component",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "repository": {
     "type": "git",
     "url": "git@bitbucket.org:mnv_tech/ml-react-component.git"
@@ -76,6 +76,5 @@
     "start": "webpack-dev-server --config ./webpack.config.js",
     "build": "webpack -p --config webpack.production.config.js",
     "prepublish": "babel --plugins 'transform-es2015-modules-umd' src --ignore __tests__ --out-dir ./dist"
-    
   }
 }
