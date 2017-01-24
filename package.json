@@ -74,7 +74,6 @@
   },
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.js",
-    "build": "webpack -p --config webpack.production.config.js",
-    "prepublish": "babel --plugins 'transform-es2015-modules-umd' src --ignore __tests__ --out-dir ./dist"
+    "build": "webpack -p --config webpack.production.config.js"
   }
 }
