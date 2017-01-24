@@ -5,7 +5,7 @@ import css from './mlButton.css';
 const MLButton = ({ title, btnClass, btnType, onClick, icon, style }) => {
   return (
     <button 
-      className={ css['button'] + ' ' + css[ btnClass ] + ' ' + css[ btnType ] } 
+      className={ `${css['button']} ${css[ btnClass ]} ${css[ btnType ]}` } 
       style={ style } 
       onClick={ onClick } >{ icon }{ title }</button>
   );

@@ -32,7 +32,7 @@ class MLMenu extends Component {
     let that = this;
     return (
       <div className={ css["dropdown"] }>
-        <div className={ css["dropdownTitle"] } onClick={ this._openMenu }>
+        <div className={ css["dropdownTitle"] } role='tab' onClick={ this._openMenu }>
           { menuTitle } 
           <span className={ css['chevron'] }>
             <svg width="8px" height="6px" viewBox="0 0 8 6" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -46,7 +46,16 @@ class MLMenu extends Component {
           { 
             menuArray.map(function(itemName, i){
               let clickItem = that._clickItem.bind(that, itemName)
-              return <li onClick={clickItem} className={ css['dropdownItem'] } key={ itemName }><a href="#">{ itemName }</a></li>
+              return (
+                <li 
+                  onClick={clickItem} 
+                  tabIndex='0'
+                  role='button'
+                  className={ css['dropdownItem'] } 
+                  key={ itemName }>
+                  <a href="#">{ itemName }</a>
+                </li>
+              )
             }) 
           }
         </ul>

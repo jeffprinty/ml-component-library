@@ -6,7 +6,11 @@
     "url": "git@bitbucket.org:mnv_tech/ml-react-component.git"
   },
   "homepage": "https://bitbucket.org/mnv_tech/ml-react-component",
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^3.14.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "react-a11y": "^0.3.3"
+  },
   "dependencies": {
     "babel-core": "^6.18.2",
     "babel-eslint": "^7.1.1",
@@ -33,6 +37,7 @@
     "react-addons-css-transition-group": "^15.4.1",
     "react-contenteditable": "^2.0.1",
     "react-dom": "^15.4.0",
+    "react-highlight": "^0.9.0",
     "react-hot-loader": "^3.0.0-beta.6",
     "resolve-url": "^0.2.1",
     "resolve-url-loader": "^1.6.0",

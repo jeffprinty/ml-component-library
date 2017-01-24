@@ -16,7 +16,7 @@
   padding: 15px;
   background-color: #FFF;
 }
-pre {
+/*pre {
     margin-bottom: 1em;
     padding: 5px;
     padding-bottom: 20px !ie7;
@@ -27,7 +27,7 @@ pre {
     font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,sans-serif;
     font-size: 13px;
     background-color: #eff0f1;
-}
+}*/
 
 h2 {
   clear: both;
@@ -106,4 +106,17 @@ vertical-align: middle;
 .eSnippetContainer {
   height: 400px;
   position: relative;
+}
+.demoRow {
+  display: flex;
+  
+}
+.demoExample, .demoCode {
+  flex-direction: row;
+  flex: 1;
+  align-self: flex-start;
+
+}
+pre {
+  margin: 0;
 }

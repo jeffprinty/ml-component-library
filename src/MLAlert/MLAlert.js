@@ -12,7 +12,7 @@ class MLAlert extends Component {
     const { text, alertType, icon, style } = this.props;
     return (
       <div style={style}>
-        <MLIcon iconType={ icon } iconTitle={ alertType } iconFill='#666666' />
+        <MLIcon type={ icon } title={ alertType } fill='#666666' />
 
         { text }
       </div>

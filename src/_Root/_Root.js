@@ -12,6 +12,8 @@ import MarkerOrb from '../MarkerOrb/MarkerOrb';
 import ESnippet from '../esnippet.js';
 import '../../assets/styles/fonts.css';
 
+import Highlight from 'react-highlight';
+
 import css from './_root.css';
 
 let iconArray = ['alert_outline','alert','arrow_left','arrow_right','bar_chart','book','bookmark_outline','bookmark','box','calendar','cancel','caret_down','check','checkbox','chevron_down','chevron_left','chevron_right','chevron_up','clipboard','clock','comment_highlight','comment_microphone','comment_question','comment_text','comment_thumbs_up','comment','cursor','dock_left','dock_right','dock_top','document','download','edit','expand','grid_4','grid_9','head','heart_outline','heart','help_outline','help','highlight','home','item_add','item_copy','item_edit','item_remove','link','list_left','list_right','maximize','menu','minimize','minus','more','mortar_board','move','not','pause','person','play','plus','pointer_outline','pointer','print','search','spreadsheet','stop','text_size','thumbs_down','thumbs_up','tools','upload','video','x','zoom_in','zoom_out'];
@@ -29,7 +31,6 @@ class _Root extends Component {
   }
 
   render() {
-    console.log('farp');
     return (
       <div className={ css['container']}>
         <h1>ML CDL React Kitchen Sink</h1>
@@ -47,81 +48,140 @@ class _Root extends Component {
         </div>
         <div className={css['demoWrap']}>
           <h2>Toggle Switch</h2>
-          <MLToggle checked={ this.state.toggleA } onChange={ this._clickToggle } />
-          <h3>Disabled switches</h3>
-          <MLToggle checked={ true } disabled={ true } onChange={ this._clickToggle } />
-          <MLToggle checked={ false } disabled={ true } onChange={ this._clickToggle } />
-          <div ref='toggleVal'>{ this.state.toggleA }</div>
-          <pre>{`
-<MLToggle checked={ true } disabled={ true } onChange={ this._clickToggle } />  
-          `}</pre>
+          <section className={css['demoRow']}>
+            <div className={css['demoExample']}>
+              <MLToggle 
+                label='Toggle' 
+                checked={ this.state.toggleA } 
+                onChange={ this._clickToggle } />
+              <h3>Disabled switches</h3>
+              <MLToggle 
+                label='Toggle' 
+                checked={ true } 
+                disabled={ true } 
+                onChange={ this._clickToggle } />
+              <MLToggle 
+                label='Toggle' 
+                checked={ false } 
+                disabled={ true } 
+                onChange={ this._clickToggle } />
+              <div ref='toggleVal'>{ this.state.toggleA }</div>
+            </div>
+            <div className={css['demoCode']}>
+              <Highlight className='javascript'>{
+`<MLToggle checked={ true }
+  disabled={ true } 
+  onChange={ this._clickToggle } />  
+              `}</Highlight>
+            </div>
+          </section>
         </div>
         <div className={css['demoWrap']} style={{display: 'none'}}>
           <MLAlert alertType='info' icon='warning' text='Alert!' />
         </div>
         <div className={css['demoWrap']}>
+
           <h2>MarkerOrb</h2>
-          <div className={css['markerWrap']}>
-            {['#ffafaf','#ffc196','#faf2a9','#acdba2','#aee5d3','#a2d6dd','#b0daff','#e5c6e3','#edb0ce','#dddddd'].map(function(color,i){
-              return (<MarkerOrb className={ css['marker'] } key={ i } markerColor={ color } noX={ true } isSelected={ false } />)
-            })
-        }
+          <div className={css['markerWrap']} role='radiogroup'>
+            {
+              ['#ffafaf','#ffc196','#faf2a9','#acdba2','#aee5d3','#a2d6dd','#b0daff','#e5c6e3','#edb0ce','#dddddd']
+                .map(function(color,i){
+                  return (
+                    <MarkerOrb 
+                      className={ css['marker'] } 
+                      key={ i } 
+                      label={ color }
+                      onClick={ (data) => console.log(data) }
+                      markerColor={ color } 
+                      noX={ true } 
+                      isSelected={ false } />
+                    )
+                }
+              )
+            }
           </div>
           <pre>{`
-<MarkerOrb key={ obj.globalId } markerColor={ obj.vstColor } globalId={ obj.globalId } clickFunc={ that._selectHighlightColor } isSelected={ selectedMarkerId == obj.globalId } />
+<MarkerOrb key={ obj.globalId } markerColor={ obj.vstColor } globalId={ obj.globalId } onClick={ that._selectHighlightColor } isSelected={ selectedMarkerId == obj.globalId } />
           `}</pre>
         </div>
         <div className={css['demoWrap']}>
           <h2>Menu</h2>
-          <MLMenu 
-            itemClicked={ function(c){console.log('clicked item',c)} } 
-            menuTitle='test!'
-            menuArray={['beans','baby foxes']}/>
-        <pre>{`
-<MLMenu 
-  itemClicked={ function(c){console.log('clicked item',c)} } 
+          <section className={css['demoRow']}>
+            <div className={css['demoExample']}>
+              <MLMenu 
+                itemClicked={ function(c){console.log('clicked item',c)} } 
+                menuTitle='test!'
+                menuArray={['beans','baby foxes']}/>
+            </div>
+            <div className={css['demoCode']}>
+              <Highlight className='javascript'>{
+`<MLMenu 
+  itemClicked={ () => {)} } 
   menuTitle='test!'
-  menuArray={['beans','baby foxes']}/>
-        `}</pre>
+  menuArray={['beans','baby foxes']}/>`}
+              </Highlight>
+            </div>
+          </section>
         </div>
         <div className={css['demoWrap']}>
           <h2>Accordion</h2>
-          <MLAccordion
-            title='Floop'
-            content='Scoobers' />
+          <section className={css['demoRow']}>
+            <div className={css['demoExample']}>
+              <MLAccordion
+                title="Here's the title"
+                content='The content goes here' />
+            </div>
+            <div className={css['demoCode']}>
+              <Highlight className='javascript'>{
+`<MLAccordion
+  title="Here's the title"
+  content='The content goes here' />
+              `}</Highlight>
+            
+            </div>
+          </section>
         </div>
         <div className={css['demoWrap']}>
           <h2>Cards</h2>
-          <MLCard 
-            title="The Gear Wars" 
-            content="It was never really about the gears." 
-            button={<MLButton title='Learn More ' btnClass='primary' />}
-            />
-        <pre>{`
-<MLCard 
+          <section className={css['demoRow']}>
+            <div className={css['demoExample']}>
+              <MLCard 
+                title="The Gear Wars" 
+                content="It was never really about the gears." 
+                button={<MLButton title='Learn More ' btnClass='primary' />}
+                />
+            </div>
+            <div className={css['demoCode']}>
+              <Highlight className='javascript'>{
+`<MLCard 
   title="The Gear Wars" 
   content="It was never really about the gears." 
   button={<MLButton title='Primary ' btnClass='primary' />}
-  />
-        `}</pre>
+  />`
+            }</Highlight>
+
+            </div>
+          </section>
         </div>
         <div className={css['demoWrap']}>
           <h2>Icons</h2>
-          <pre>{`
+          <Highlight className='javascript'>{
+`npm install ml-react-cdl-icons --registry http://npm.macmillantech.com:8080
+
 import MLIcon from 'ml-react-cdl-icons';
 <MLIcon 
-  iconTitle="add note" 
-  iconFill="#ffffff" 
-  iconType="edit" 
-  iconWidth="24" 
-  iconHeight="24"
+  title="add note" 
+  fill="#ffffff" 
+  type="edit" 
+  width="24" 
+  height="24"
   viewBox="0 0 24 24"
   className="icon" />
           `}
-          </pre>
+          </Highlight>
           <div className={css['iconGrid']}>
           { iconArray.map(function(title,i){
-              return (<span className={css['iconWrap']} key={i}><MLIcon iconType={title} iconTitle={title} /><span className={ css['iconName'] }>{title}</span></span> )
+              return (<span className={css['iconWrap']} key={i}><MLIcon type={title} title={title} /><span className={ css['iconName'] }>{title}</span></span> )
             })
           }
           </div>
@@ -129,33 +189,78 @@ import MLIcon from 'ml-react-cdl-icons';
         <div className={css['demoWrap']}>
           <h2>Buttons</h2>
           <h3>Primary</h3>
-          <MLButton title='Primary ' btnClass='primary' />
-          <MLButton title='Primary Red' btnClass='primary' btnType='red' />
-          <MLButton title='Primary Green' btnClass='primary' btnType='green' />
-           <pre>{`
-<MLButton title='Primary ' btnClass='primary' />
-<MLButton title='Primary Red' btnClass='primary' btnType='red' />
-<MLButton title='Primary Green' btnClass='primary' btnType='green' />
-            `}</pre>
-          <h3>Secondary</h3>
-          <MLButton title='Secondary' btnClass='secondary' />
-          <MLButton title='Secondary Red' btnClass='secondary' btnType='red' />
-          <MLButton title='Secondary Green' btnClass='secondary' btnType='green' />
-          <pre>{`
-<MLButton title='Secondary' btnClass='secondary' />
-<MLButton title='Secondary Red' btnClass='secondary' btnType='red' />
-<MLButton title='Secondary Green' btnClass='secondary' btnType='green' />
-          `}</pre>
-          <h3>With icon</h3>
-          <MLButton icon={<MLIcon iconTitle={ 'edit' } iconType={ 'edit' } iconFill='inherit' />} title='Primary' btnClass='primary' btnType='icon' />
-          <MLButton icon={<MLIcon iconTitle={ 'arrow_left' } iconType={ 'arrow_left' } iconFill='inherit' />} title='Primary' btnClass='primary' btnType='icon' />
-          <MLButton icon={<MLIcon iconTitle={ 'edit' } iconType={ 'edit' } iconFill='inherit' />} title='Primary' btnClass='primary' btnType='icon' />
-          <pre>{`
-<MLButton icon={<MLIcon iconTitle={ 'edit' } iconType={ 'edit' } iconFill='inherit' />} title='Primary' btnClass='primary' btnType='icon' />
-<MLButton icon={<MLIcon iconTitle={ 'arrow_left' } iconType={ 'arrow_left' } iconFill='inherit' />} title='Primary' btnClass='primary' btnType='icon' />
-<MLButton icon={<MLIcon iconTitle={ 'edit' } iconType={ 'edit' } iconFill='inherit' />} title='Primary' btnClass='primary' btnType='icon' />
-          `}</pre>
 
+          <section className={css['demoRow']}>
+            <div className={css['demoExample']}>
+              <MLButton title='Primary ' btnClass='primary' />
+              <MLButton title='Primary Red' btnClass='primary' btnType='red' />
+              <MLButton title='Primary Green' btnClass='primary' btnType='green' />
+            </div>
+            <div className={css['demoCode']}>
+              <Highlight className='javascript'>{
+`<MLButton 
+  title='Primary ' 
+  btnClass='primary' />
+<MLButton 
+  title='Primary Red' 
+  btnClass='primary' 
+  btnType='red' />
+<MLButton 
+  title='Primary Green' 
+  btnClass='primary' 
+  btnType='green' />`}
+              </Highlight>
+            </div>
+          </section>
+          <h3>Secondary</h3>
+          <section className={css['demoRow']}>
+            <div className={css['demoExample']}>
+              <MLButton title='Secondary' btnClass='secondary' />
+              <MLButton title='Secondary Red' btnClass='secondary' btnType='red' />
+              <MLButton title='Secondary Green' btnClass='secondary' btnType='green' />
+            </div>
+            <div className={css['demoCode']}>
+              <Highlight className='javascript'>{
+`<MLButton 
+  title='Secondary' 
+  btnClass='secondary' />
+<MLButton 
+  title='Secondary Red' 
+  btnClass='secondary' 
+  btnType='red' />
+<MLButton 
+  title='Secondary Green' 
+  btnClass='secondary' 
+  btnType='green' />`}
+              </Highlight>
+            </div>
+          </section>
+          <h3>With icon</h3>
+          <section className={css['demoRow']}>
+            <div className={css['demoExample']}>
+              <MLButton icon={<MLIcon title={ 'edit' } type={ 'edit' } fill='inherit' />} title='Primary' btnClass='primary' btnType='icon' />
+              <MLButton icon={<MLIcon title={ 'arrow_left' } type={ 'arrow_left' } fill='inherit' />} title='Primary' btnClass='primary' btnType='icon' />
+              <MLButton icon={<MLIcon title={ 'edit' } type={ 'edit' } fill='inherit' />} title='Primary' btnClass='primary' btnType='icon' />
+            </div>
+            <div className={css['demoCode']}>
+              <Highlight className='javascript'>{
+`<MLButton 
+  icon={<MLIcon />} 
+  title='Primary' 
+  btnClass='primary' 
+  btnType='icon' />
+<MLButton 
+  title='Primary' 
+  btnClass='primary' 
+  btnType='icon' />
+<MLButton 
+  icon={<MLIcon />} 
+  title='Primary' 
+  btnClass='primary' 
+  btnType='icon' />`}
+              </Highlight>
+            </div>
+          </section>
         </div>
       </div>
     );

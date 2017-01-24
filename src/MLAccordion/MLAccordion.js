@@ -15,10 +15,8 @@ class MLAccordion extends Component {
     this.setState({ 
       drawerOpen: !this.state.drawerOpen
     })
-    console.log('click',this.state);
   }
   _clickItem = (click) => {
-    console.log(click);
     this.props.itemClicked(click);
     this.setState({
       menuTitle: click,
@@ -31,7 +29,13 @@ class MLAccordion extends Component {
     const { drawerOpen } = this.state;
     return (
       <div className={ css["card"] }>
-        <div className={ css["cardTitle"] + ' ' + css['divider'] } onClick={ this._openDrawer } >
+        <div 
+          role='tab' 
+          tabIndex='0'
+          aria-expanded={ drawerOpen }
+          className={ css["cardTitle"] + ' ' + css['divider'] } 
+          onKeyDown={ this._openDrawer } 
+          onClick={ this._openDrawer } >
           <span className={ css['titleIcon'] }>
             { drawerOpen ?
               <MLIcon iconType='minus' iconTitle='Collapse' iconFill='#666666' />

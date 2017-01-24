@@ -410,27 +410,31 @@ const icons = {
   };
 class MLIcon extends Component {
   render() {
-    const { iconTitle, iconType, iconWidth, iconHeight, iconFill } = this.props;
+    const { title, type, width, height, fill } = this.props;
     return (
-      <svg width={ iconWidth } height={ iconHeight } viewBox={"0 0 24 24"} fillRule={ iconFill }>
-        <title>{ iconTitle }</title>
-        { icons[iconType] }
+      <svg 
+        width={ width } 
+        height={ height } 
+        viewBox={"0 0 24 24"} 
+        fillRule={ fill }>
+        <title>{ title }</title>
+        { icons[type] }
       </svg>
     )
   }
 }
 MLIcon.defaultProps = {
-    iconWidth: "24",
-    iconHeight: "24",
-    iconFill: "#ffffff"
+    width: "24",
+    height: "24",
+    fill: "#ffffff"
   }
 
 MLIcon.propTypes = {
-  iconType: PropTypes.string.isRequired,
-  iconTitle: PropTypes.string.isRequired,
-  iconFill: PropTypes.string,
-  iconWidth: PropTypes.string,
-  iconHeight: PropTypes.string
+  type: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  fill: PropTypes.string,
+  width: PropTypes.string,
+  height: PropTypes.string
 };
 
 export default MLIcon;
