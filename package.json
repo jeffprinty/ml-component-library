@@ -8,7 +8,7 @@
   "publishConfig": {
     "registry": "http://npm.macmillantech.com:8080"
   },
-  "main": "./dist/MLComponents.js",
+  "main": "./src/MLComponents.js",
   "author": "Macmillan Learning",
   "homepage": "https://bitbucket.org/mnv_tech/ml-react-component",
   "devDependencies": {

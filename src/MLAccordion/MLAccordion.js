@@ -1,5 +1,48 @@
 import React, { Component, PropTypes } from 'react';
-import css from './mlAccordion.css';
+
+const styles = {
+  card: {
+    height: 'auto',
+    width: '100%',
+    background: '#ffffff',
+    boxShadow: '0 1px 3px rgba(0,0,0,0.2)'
+  },
+cardTitle: {
+  padding: '18px 23px', 
+  position: 'relative',
+  display: 'flex',
+  verticalAlign: 'baseline',
+  cursor: 'pointer'
+},
+titleText: {
+  flex: 3,
+  fontWeight: 'normal',
+  fontSize: '18px',
+  color: '#080808',
+  padding: 0,
+  marginLeft: '8px'
+},
+
+divider: {
+    borderBottom: '1px solid #dddddd',
+    marginBottom: '18px'
+  },
+  
+headerButton: {
+    margin: '-5px 0 -5px 5px',
+    flex : 1,
+    textAlign: 'right'
+  },
+  
+content: {
+    padding: 23,
+    paddingTop: 0, 
+    boxSizing: 'border-box',
+    color: '#383838',
+    wordWrap: 'break-word'
+  }
+  
+};
 
 import MLIcon from 'ml-react-cdl-icons';
 
@@ -21,24 +64,24 @@ class MLAccordion extends Component {
     const { title, content } = this.props;
     const { isOpen } = this.state;
     return (
-      <div className={ css["card"] }>
+      <div style={ styles["card"] }>
         <div 
           role='tab' 
           tabIndex='0'
           aria-expanded={ isOpen }
-          className={ css["cardTitle"] + ' ' + css['divider'] } 
+          style={ styles['cardTitle'], styles['divider'] } 
           onKeyDown={ this._openDrawer } 
           onClick={ this._openDrawer } >
-          <span className={ css['titleIcon'] }>
+          <span style={ styles['titleIcon'] }>
             { isOpen ?
               <MLIcon type='minus' title='Collapse' fill='#666666' />
               :
               <MLIcon type='plus' title='Expand' fill='#666666' />
             }
           </span>
-          <span className={ css['titleText'] }>{ title }</span>
+          <span style={ styles['titleText'] }>{ title }</span>
         </div>
-        <div style={{ display: isOpen ? 'block' : 'none' }} className={ css['content'] }>
+        <div style={{ display: isOpen ? 'block' : 'none', ...styles['content'] }} >
           { content }
         </div>
       </div>
