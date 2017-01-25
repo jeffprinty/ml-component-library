@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import injectSheet from 'react-jss'
 
 const styles = {
   card: {
