@@ -8,7 +8,7 @@
   "publishConfig": {
     "registry": "http://npm.macmillantech.com:8080"
   },
-  "main": "./src/MLComponents.js",
+  "main": "./dist/ml-cdl-components.js",
   "author": "Macmillan Learning",
   "homepage": "https://bitbucket.org/mnv_tech/ml-react-component",
   "devDependencies": {
@@ -71,6 +71,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.js",
-    "build": "webpack -p --config webpack.production.config.js"
+    "build": "BABEL_ENV=production node_modules/.bin/babel --out-dir='dist' --ignore='__tests__/*' src",
+    "prepublish": "npm run build"
   }
 }
