@@ -6,5 +6,11 @@ import MLIcon from './MLIcon/MLIcon';
 import MLMenu from './MLMenu/MLMenu';
 import MLToggle from './MLToggle/MLToggle';
 module.exports = {
-  MLAccordion
+  MLAccordion,
+  MLAlert,
+  MLButton,
+  MLCard,
+  MLIcon,
+  MLMenu,
+  MLToggle
 }

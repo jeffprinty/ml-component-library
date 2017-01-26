@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { MLIcon, MLMenu, MLAlert, MLCard, MLToggle, MLButton } from '../MLComponents'
-import { MLAccordion } from  '../../dist/MLComponents';
+import { MLIcon, MLMenu, MLAlert, MLCard, MLToggle, MLButton, MLAccordion } from '../index'
 import MarkerOrb from '../MarkerOrb/MarkerOrb';
 
 import ESnippet from '../esnippet.js';
