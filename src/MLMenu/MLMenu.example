@@ -1,0 +1,4 @@
+<MLMenu 
+  itemClicked={ () => {} } 
+  title='test!'
+  itemArray={['beans','baby foxes']}/>

@@ -1,6 +1,87 @@
 import React, { Component, PropTypes } from 'react';
 import css from './mlMenu.css';
 
+import Colors from '../colors.js'
+import styled from 'styled-components';
+
+const Dropdown = styled.div`
+  display: inline-block;
+  position: relative; 
+`;
+const DropdownTitle = styled.div`
+  height: 34px;
+  line-height: 34px;
+  color: ${(props) => props.isOpen ? '#080808' : '#00758E' };
+  padding-right: 14px;
+  text-align: right;
+
+  &:hover {
+    cursor: pointer;
+    color: #080808;
+  }
+`;
+const Chevron = styled.span`
+  fill: #00758E;
+  &:hover {
+    fill: #080808;  
+  }
+`;
+const DropdownList = styled.ul`
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: -15px;
+  width: 200px;
+  background: #f8f8f8;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  z-index: 500;
+  font-size: 15px;
+  
+  -webkit-transition:top .3s cubic-bezier(0,.8,.4,1), opacity .3s cubic-bezier(0,.8,.4,1);
+  -moz-transition:top .3s cubic-bezier(0,.8,.4,1), opacity .3s cubic-bezier(0,.8,.4,1);
+  -ms-transition:top .3s cubic-bezier(0,.8,.4,1), opacity .3s cubic-bezier(0,.8,.4,1);
+  transition:top .3s cubic-bezier(0,.8,.4,1), opacity .3s cubic-bezier(0,.8,.4,1);
+`;
+const DropdownOpen = styled.ul`
+  position: absolute;
+  top: 0px;
+  width: 200px;
+  background: #f8f8f8;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  opacity: 0;
+  z-index: 500;
+  font-size: 15px;
+  
+  -webkit-transition:top .3s cubic-bezier(0,.8,.4,1), opacity .3s cubic-bezier(0,.8,.4,1);
+  -moz-transition:top .3s cubic-bezier(0,.8,.4,1), opacity .3s cubic-bezier(0,.8,.4,1);
+  -ms-transition:top .3s cubic-bezier(0,.8,.4,1), opacity .3s cubic-bezier(0,.8,.4,1);
+  transition:top .3s cubic-bezier(0,.8,.4,1), opacity .3s cubic-bezier(0,.8,.4,1);
+  display: block;
+  visibility: visible;
+  opacity: 1 !important;
+  top: -5px !important;
+  display: block !important;
+`;
+const DropdownItem = styled.li`
+
+  display: block;
+  padding: 12px 15px;
+  border-bottom: 1px solid #dddddd;
+  width: 100%;
+  box-sizing: border-box; 
+
+  color: #00758E; 
+  text-decoration: none;
+
+  cursor: pointer;
+
+  &:hover {
+    background: #eeeeee;
+    text-decoration: none;
+    color: #080808; 
+  }
+`;
 
 class MLMenu extends Component {
   constructor(props) {
@@ -31,35 +112,34 @@ class MLMenu extends Component {
     const { itemArray } = this.props;
     let that = this;
     return (
-      <div className={ css["dropdown"] }>
-        <div className={ css["dropdownTitle"] } role='tab' onClick={ this._openMenu }>
+      <Dropdown>
+        <DropdownTitle role='tab' onClick={ this._openMenu }>
           { title } 
-          <span className={ css['chevron'] }>
+          <Chevron>
             <svg width="8px" height="6px" viewBox="0 0 8 6" version="1.1" xmlns="http://www.w3.org/2000/svg">
               <g>
                 <polygon points="0 0 4 5.19614188 8 0"></polygon>
               </g>
             </svg>
-          </span>
-        </div>
-        <ul className={ !isOpen ? css['dropdownContent'] : css['dropdownOpen'] } style={{ left: '-15px' }}>
+          </Chevron>
+        </DropdownTitle>
+        <DropdownOpen>
           { 
             itemArray.map(function(itemName, i){
               let clickItem = that._clickItem.bind(that, itemName)
               return (
-                <li 
+                <DropdownItem 
                   onClick={clickItem} 
                   tabIndex='0'
                   role='button'
-                  className={ css['dropdownItem'] } 
                   key={ itemName }>
-                  <a href="#">{ itemName }</a>
-                </li>
+                  { itemName }
+                </DropdownItem>
               )
             }) 
           }
-        </ul>
-      </div>
+        </DropdownOpen>
+      </Dropdown>
     )
   }
 

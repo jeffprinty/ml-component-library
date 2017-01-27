@@ -66,11 +66,11 @@ h2 {
   left: 8px;
   top: 8px;
 }
-.stackedIcon {
-  display:block;
-}
 .iconName {
   display: block;
+}
+.stackedIcon {
+  display:block;
 }
 .brand {
   color:  red;

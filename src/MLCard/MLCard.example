@@ -1,0 +1,7 @@
+<MLCard 
+  title="The Gear Wars" 
+  content="It was never really about the gears." 
+  button={
+    <MLButton title='Learn More' primary />
+  }
+/>

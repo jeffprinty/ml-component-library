@@ -1,0 +1,17 @@
+<div>
+  <MLToggle 
+    label='Toggle' 
+    checked={ true } 
+    onChange={ () => {} } />
+  <h3>Disabled switches</h3>
+  <MLToggle 
+    label='Toggle' 
+    checked={ true } 
+    disabled={ true } 
+    onChange={ () => {} } />
+  <MLToggle 
+    label='Toggle' 
+    checked={ false } 
+    disabled={ true } 
+    onChange={ () => {} } />
+</div>

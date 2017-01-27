@@ -1,0 +1,30 @@
+.playground {
+  display: flex;
+}
+.playgroundCode {
+  flex-direction: row;
+  flex: 1;
+  order: 2;
+}
+.playgroundPreview {
+  flex-direction: row;
+  flex:1;
+  order: 1;
+  padding: 5px;
+}
+
+.iconWrap {
+  width: 140px;
+  float: left;
+  text-align: center;
+  padding: 10px;
+  font-size: smaller;
+}
+.iconStack {
+  position: absolute;
+  left: 8px;
+  top: 8px;
+}
+.iconName {
+  display: block;
+}

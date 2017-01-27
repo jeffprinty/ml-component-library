@@ -1,0 +1,12 @@
+<div>
+  <MLIcon fill='green' type='box' title='box' />
+  <MLIcon fill='blue' type='calendar' title='calendar' />
+  <MLIcon fill='pink' type='heart' title='heart' />
+  <hr/>
+  <h3>Random Colors</h3>
+  { 
+    MLIcon.listIcons.map(function(title,i){
+      return (<MLIcon key={i} fill={ Colors[ Object.keys(Colors)[ Object.keys(Colors).length * Math.random() << 0]  ] } type={title} title={title} />)
+    })
+  }
+</div>
