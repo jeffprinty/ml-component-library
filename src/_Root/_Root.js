@@ -10,6 +10,7 @@ import Colors from '../colors.js'
 
 import css from './_root.css';
 
+import DemoBox from '../DemoBox';
 
 class _Root extends Component {
   constructor(props) {
@@ -27,6 +28,13 @@ class _Root extends Component {
       <div className={ css['container']}>
         <h1>ML CDL React Kitchen Sink</h1>
         
+        <DemoBox>
+          
+              <MLAccordion title="Here's the title">
+                Some content
+              </MLAccordion>
+        </DemoBox>
+
         <div className={css['demoWrap']}>
           <h2>Toggle Switch</h2>
           <section className={css['demoRow']}>
@@ -239,7 +247,7 @@ import MLIcon from 'ml-react-cdl-icons';
             <div className={css['demoExample']}>
               <MLButton icon='edit' title='Edit' primary />
               <MLButton icon='arrow_left' title='Arrow' primary />
-              <MLButton icon='cancel' title='Primary' />
+              <MLButton icon='cancel' title='Cancel' />
             </div>
             <div className={css['demoCode']}>
               <Highlight className='javascript'>{
