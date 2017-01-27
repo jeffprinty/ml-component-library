@@ -26,7 +26,7 @@
 }
 
 .button:disabled:hover, a.button:disabled:hover {
-  opacity: 1; 
+  opacity: 1;
   cursor: default;
 }
 
@@ -42,7 +42,7 @@
 
 .button.primary:disabled, a.button.primary:disabled {
   color: #ffffff;
-  background: #dddddd;  
+  background: #dddddd;
 }
 
 /* Secondary */
@@ -117,28 +117,3 @@
   fill: #00758E; 
 }
 
-
-/* :: Custom, iPhone Retina :: */ 
-@media only screen and (min-width : 320px) {
-  
-}
-
-/* :: Extra Small Devices, Phones :: */ 
-@media only screen and (min-width : 480px) {
-
-}
-
-/* :: Small Devices, Tablets :: */
-@media only screen and (min-width : 768px) {
-
-}
-
-/* :: Medium Devices, Desktops :: */
-@media only screen and (min-width : 992px) {
-
-}
-
-/* :: Large Devices, Wide Screens :: */
-@media only screen and (min-width : 1200px) {
-
-}

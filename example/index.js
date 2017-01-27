@@ -4,8 +4,6 @@ import React from 'react';
 import { ReactDOM, render } from 'react-dom';
 
 import _Root from '../src/_Root/_Root';
-var a11y = require('react-a11y');
-//a11y(React, ReactDOM);
 
 render(
   <AppContainer>

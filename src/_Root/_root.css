@@ -61,6 +61,14 @@ h2 {
   padding: 10px;
   font-size: smaller;
 }
+.iconStack {
+  position: absolute;
+  left: 8px;
+  top: 8px;
+}
+.stackedIcon {
+  display:block;
+}
 .iconName {
   display: block;
 }
@@ -122,7 +130,7 @@ vertical-align: middle;
 }
 .demoCode {
   overflow-x: auto;
-  
+
 }
 pre {
   margin: 0;

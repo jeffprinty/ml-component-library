@@ -1,16 +1,8 @@
-import MLAccordion from './MLAccordion/MLAccordion';
-import MLAlert from './MLAlert/MLAlert';
-import MLButton from './MLButton/MLButton';
-import MLCard from './MLCard/MLCard';
-import MLIcon from './MLIcon/MLIcon';
-import MLMenu from './MLMenu/MLMenu';
-import MLToggle from './MLToggle/MLToggle';
-module.exports = {
-  MLAccordion,
-  MLAlert,
-  MLButton,
-  MLCard,
-  MLIcon,
-  MLMenu,
-  MLToggle
-}
+export { default as MLAccordion } from './MLAccordion/MLAccordion';
+export { default as MLAlert } from './MLAlert/MLAlert';
+export { default as MLButton } from './MLButton/MLButton';
+export { default as MLCard } from './MLCard/MLCard';
+export { default as MLIcon } from './MLIcon/MLIcon';
+export { default as MLMenu } from './MLMenu/MLMenu';
+export { default as MLToggle } from './MLToggle/MLToggle';
+export { default as Colors } from './colors.js';

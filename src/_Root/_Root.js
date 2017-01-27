@@ -6,6 +6,7 @@ import ESnippet from '../esnippet.js';
 import '../../assets/styles/fonts.css';
 
 import Highlight from 'react-highlight';
+import Colors from '../colors.js'
 
 import css from './_root.css';
 
@@ -25,18 +26,7 @@ class _Root extends Component {
     return (
       <div className={ css['container']}>
         <h1>ML CDL React Kitchen Sink</h1>
-        <div className={css['demoWrap']}>
-          <h2>VitalSource Embedded Snippet eReader ({ this.state.toggleA ? 'Standard' : 'Enhanced' } )</h2>
-          <div className={ css['eSnippetContainer'] }>
-            <ESnippet
-              vbid={ '9780203370360'}
-              cfi={ '6/150'}
-              start={ '/4/6/2'}
-              stop={ '/4/6/8/4'}
-              highlightsEnabled={true} />
-          </div>
-            
-        </div>
+        
         <div className={css['demoWrap']}>
           <h2>Toggle Switch</h2>
           <section className={css['demoRow']}>
@@ -129,9 +119,9 @@ class _Root extends Component {
           <h2>Accordion</h2>
           <section className={css['demoRow']}>
             <div className={css['demoExample']}>
-              <MLAccordion
-                title="Here's the title"
-                content='The content goes here' />
+              <MLAccordion title="Here's the title">
+                Some content
+              </MLAccordion>
             </div>
             <div className={css['demoCode']}>
               <Highlight className='javascript'>{
@@ -186,6 +176,12 @@ import MLIcon from 'ml-react-cdl-icons';
             })
           }
           </div>
+          <div className={css['iconStack']}>
+          { MLIcon.listIcons.map(function(title,i){
+              return (<span className={css['stackedIcon']} key={i}><MLIcon fill='black' type={title} title={title} /></span> )
+            })
+          }
+          </div>
         </div>
         <div className={css['demoWrap']}>
           <h2>Buttons</h2>
@@ -193,9 +189,11 @@ import MLIcon from 'ml-react-cdl-icons';
 
           <section className={css['demoRow']}>
             <div className={css['demoExample']}>
-              <MLButton title='Primary ' btnClass='primary' />
-              <MLButton title='Primary Red' btnClass='primary' btnType='red' />
-              <MLButton title='Primary Green' btnClass='primary' btnType='green' />
+              <MLButton title='Primary ' primary />
+              <MLButton title='Secondary' />
+              <div>
+                <MLButton title='Styled' style={{ backgroundColor: Colors.medium_orange }} />
+              </div>
             </div>
             <div className={css['demoCode']}>
               <Highlight className='javascript'>{
@@ -216,22 +214,22 @@ import MLIcon from 'ml-react-cdl-icons';
           <h3>Secondary</h3>
           <section className={css['demoRow']}>
             <div className={css['demoExample']}>
-              <MLButton title='Secondary' btnClass='secondary' />
-              <MLButton title='Secondary Red' btnClass='secondary' btnType='red' />
-              <MLButton title='Secondary Green' btnClass='secondary' btnType='green' />
+              <MLButton title='Secondary' secondary />
+              <MLButton title='Secondary Red' secondary btnType='red' />
+              <MLButton title='Secondary Green' secondary btnType='green' />
             </div>
             <div className={css['demoCode']}>
               <Highlight className='javascript'>{
 `<MLButton 
   title='Secondary' 
-  btnClass='secondary' />
+  secondary />
 <MLButton 
   title='Secondary Red' 
-  btnClass='secondary' 
+  secondary 
   btnType='red' />
 <MLButton 
   title='Secondary Green' 
-  btnClass='secondary' 
+  secondary 
   btnType='green' />`}
               </Highlight>
             </div>
@@ -239,25 +237,25 @@ import MLIcon from 'ml-react-cdl-icons';
           <h3>With icon</h3>
           <section className={css['demoRow']}>
             <div className={css['demoExample']}>
-              <MLButton icon={<MLIcon title={ 'edit' } type={ 'edit' } fill='inherit' />} title='Primary' btnClass='primary' btnType='icon' />
-              <MLButton icon={<MLIcon title={ 'arrow_left' } type={ 'arrow_left' } fill='inherit' />} title='Primary' btnClass='primary' btnType='icon' />
-              <MLButton icon={<MLIcon title={ 'edit' } type={ 'edit' } fill='inherit' />} title='Primary' btnClass='primary' btnType='icon' />
+              <MLButton icon='edit' title='Edit' primary />
+              <MLButton icon='arrow_left' title='Arrow' primary />
+              <MLButton icon='cancel' title='Primary' />
             </div>
             <div className={css['demoCode']}>
               <Highlight className='javascript'>{
 `<MLButton 
   icon={<MLIcon />} 
   title='Primary' 
-  btnClass='primary' 
+  primary 
   btnType='icon' />
 <MLButton 
   title='Primary' 
-  btnClass='primary' 
+  primary 
   btnType='icon' />
 <MLButton 
   icon={<MLIcon />} 
   title='Primary' 
-  btnClass='primary' 
+  primary 
   btnType='icon' />`}
               </Highlight>
             </div>
