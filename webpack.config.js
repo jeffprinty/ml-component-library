@@ -182,6 +182,7 @@ const webpackConfig = {
 
   postcss: (_webpack) => {
     return [
+      require('lost'),
       require('postcss-smart-import')({
         addDependencyTo: _webpack,
         root: path.resolve(__dirname, './'),
@@ -195,7 +196,7 @@ const webpackConfig = {
   resolve: {
     alias: {
       Images: path.resolve(__dirname, 'assets/images'),
-      Styles: path.resolve(__dirname, 'assets/styles'),
+      Styles: path.resolve(__dirname, 'assets/styles')
     },
     extensions: ['', '.js', '.jsx']
   }

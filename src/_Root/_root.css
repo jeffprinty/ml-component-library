@@ -1,9 +1,14 @@
 @import "../../assets/styles/fonts.css";
 
+.pageWrap {
+  width: 100%;
+  lost-flex-container: column;  
+}
+.sidebar {
+  lost-column: 1/5 2 0px;
+}
 .container {
   height:100%;
-  display: flex;
-  flex-flow: column;
   background-color: #F3F3F3;
   font-family: 'Source Sans Pro', sans-serif;
 
@@ -12,9 +17,10 @@
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
-  width: 1060px;
   padding: 15px;
   background-color: #FFF;
+
+  lost-column: 4/5;
 }
 /*pre {
     margin-bottom: 1em;
@@ -47,6 +53,11 @@ h2 {
   align-items: center;
 
   background-color: #152a34;
+}
+
+.colorGrid {
+  padding: 8px;
+  lost-column: 1/5;
 }
 
 .iconGrid {

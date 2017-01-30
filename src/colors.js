@@ -1,5 +1,4 @@
 const Colors = {
-  Macmillan_Red: '#da1b2c',
   very_light_red: '#ffe7e5',
   light_red: '#ffafaf',
   medium_red: '#ef5656',
