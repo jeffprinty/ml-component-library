@@ -40,7 +40,10 @@ const webpackConfig = {
       warnings: true
     }
   },
-
+  
+  eslint: {
+    configFile: './.eslintrc'
+  },
   // devtool: 'cheap-module-eval-source-map', //javascript sourcemaps
   devtool: 'eval', //javascript sourcemaps
 
@@ -68,6 +71,11 @@ const webpackConfig = {
           path.resolve(__dirname, 'example/index.js')
         ],
         loader: 'babel'
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader'
       },
       {
         test: /\.css$/,

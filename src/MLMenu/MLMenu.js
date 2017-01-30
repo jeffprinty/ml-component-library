@@ -1,7 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import css from './mlMenu.css';
 
-import Colors from '../colors.js'
 import styled from 'styled-components';
 
 const Dropdown = styled.div`
@@ -11,7 +9,7 @@ const Dropdown = styled.div`
 const DropdownTitle = styled.div`
   height: 34px;
   line-height: 34px;
-  color: ${(props) => props.isOpen ? '#080808' : '#00758E' };
+  color: ${ props => (props.isOpen ? '#080808' : '#00758E') };
   padding-right: 14px;
   text-align: right;
 
@@ -26,7 +24,7 @@ const Chevron = styled.span`
     fill: #080808;  
   }
 `;
-const DropdownList = styled.ul`
+const DropdownClosed = styled.ul`
   display: block;
   visibility: hidden;
   opacity: 0;
@@ -58,7 +56,7 @@ const DropdownOpen = styled.ul`
   -ms-transition:top .3s cubic-bezier(0,.8,.4,1), opacity .3s cubic-bezier(0,.8,.4,1);
   transition:top .3s cubic-bezier(0,.8,.4,1), opacity .3s cubic-bezier(0,.8,.4,1);
   display: block;
-  visibility: visible;
+  visibility: 'visible';
   opacity: 1 !important;
   top: -5px !important;
   display: block !important;
@@ -89,70 +87,71 @@ class MLMenu extends Component {
     this.state = {
       title: props.title,
       isOpen: false
-    }
+    };
   }
 
   _openMenu = () => {
-    this.setState({ 
+    this.setState({
       isOpen: !this.state.isOpen
-    })
-    console.log('click',this.state);
+    });
   }
-  _clickItem = (click) => {
+  _clickItem = click => {
     console.log(click);
-    this.props.itemClicked(click);
+    this.props.itemSelected(click);
     this.setState({
       title: click,
-      isOpen: false,
-    })
+      isOpen: false
+    });
   }
 
   render() {
     const { title, isOpen } = this.state;
     const { itemArray } = this.props;
-    let that = this;
+
+    const DrawerDiv = isOpen ? DropdownOpen : DropdownClosed;
+
     return (
       <Dropdown>
-        <DropdownTitle role='tab' onClick={ this._openMenu }>
-          { title } 
+        <DropdownTitle role="tab" onClick={ this._openMenu }>
+          { title }
           <Chevron>
             <svg width="8px" height="6px" viewBox="0 0 8 6" version="1.1" xmlns="http://www.w3.org/2000/svg">
               <g>
-                <polygon points="0 0 4 5.19614188 8 0"></polygon>
+                <polygon points="0 0 4 5.19614188 8 0" />
               </g>
             </svg>
           </Chevron>
         </DropdownTitle>
-        <DropdownOpen>
-          { 
-            itemArray.map(function(itemName, i){
-              let clickItem = that._clickItem.bind(that, itemName)
+        <DrawerDiv>
+          {
+            itemArray.map((itemName) => {
+              let clickItem = this._clickItem.bind(this, itemName);
               return (
-                <DropdownItem 
-                  onClick={clickItem} 
-                  tabIndex='0'
-                  role='button'
+                <DropdownItem
+                  onClick={ clickItem }
+                  tabIndex="0"
+                  role="button"
                   key={ itemName }>
                   { itemName }
                 </DropdownItem>
-              )
-            }) 
+              );
+            })
           }
-        </DropdownOpen>
+        </DrawerDiv>
       </Dropdown>
-    )
+    );
   }
 
 }
 
 MLMenu.defaultProps = {
   itemArray: []
-}
+};
 
 MLMenu.propTypes = {
   title: PropTypes.string.isRequired,
   itemArray: PropTypes.array.isRequired,
-  itemClicked: PropTypes.func.isRequired,
+  itemSelected: PropTypes.func.isRequired
 };
 
 export default MLMenu;

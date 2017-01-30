@@ -1,9 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
-import MLButton from '../MLButton/MLButton';
-
 import styled from 'styled-components';
-import Colors from '../colors.js'
 
 const Card = styled.div`
   height: auto;
@@ -40,31 +37,15 @@ const CardContent = styled.div`
 `;
 
 class MLCard extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-
-    }
-  }
 
   _openMenu = () => {
-    this.setState({ 
-      menuOpen: !this.state.menuOpen
-    })
-    console.log('click',this.state);
-  }
-  _clickItem = (click) => {
-    console.log(click);
-    this.props.itemClicked(click);
     this.setState({
-      menuTitle: click,
-      menuOpen: false,
-    })
+      menuOpen: !this.state.menuOpen
+    });
   }
 
   render() {
     const { title, content, button } = this.props;
-    let that = this;
     return (
       <Card>
         <CardTitle>
@@ -77,14 +58,14 @@ class MLCard extends Component {
           { content }
         </CardContent>
       </Card>
-    )
+    );
   }
 
 }
 
 MLCard.defaultProps = {
   button: null
-}
+};
 
 MLCard.propTypes = {
   title: PropTypes.string.isRequired,

@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import MLIcon from 'ml-react-cdl-icons';
-import Colors from '../colors.js'
 
 import styled from 'styled-components';
 
@@ -41,15 +40,15 @@ class MLAccordion extends Component {
     super(props);
     this.state = {
       isOpen: false
-    }
+    };
   }
   _openDrawer = (e) => {
     if (!!e.key && e.key !== 'Enter') {
-      return false
+      return false;
     }
-    this.setState({ 
+    this.setState({
       isOpen: !this.state.isOpen
-    })
+    });
   }
 
   render() {
@@ -57,17 +56,17 @@ class MLAccordion extends Component {
     const { isOpen } = this.state;
     return (
       <Accordion>
-        <AccordionTitle 
-          role='tab' 
-          tabIndex='0'
+        <AccordionTitle
+          role="tab"
+          tabIndex="0"
           aria-expanded={ isOpen }
-          onKeyDown={ this._openDrawer } 
+          onKeyDown={ this._openDrawer }
           onClick={ this._openDrawer } >
           <AccordionIcon>
             { isOpen ?
-              <MLIcon type='minus' title='Collapse' fill='#666666' />
+              <MLIcon type="minus" title="Collapse" fill="#666666" />
               :
-              <MLIcon type='plus' title='Expand' fill='#666666' />
+              <MLIcon type="plus" title="Expand" fill="#666666" />
             }
           </AccordionIcon>
           <TitleText>{ title }</TitleText>
@@ -76,17 +75,18 @@ class MLAccordion extends Component {
           { children }
         </AccordionContent>
       </Accordion>
-    )
+    );
   }
 
 }
 
 MLAccordion.defaultProps = {
   button: null
-}
+};
 
 MLAccordion.propTypes = {
   title: PropTypes.string.isRequired,
+  children: PropTypes.string.element
 };
 
 export default MLAccordion;

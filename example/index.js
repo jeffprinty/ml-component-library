@@ -1,7 +1,7 @@
 import 'babel-polyfill'; // IE polyfill for promises
 import { AppContainer } from 'react-hot-loader';
 import React from 'react';
-import { ReactDOM, render } from 'react-dom';
+import { render } from 'react-dom';
 
 import _Root from '../src/_Root/_Root';
 
