@@ -14,6 +14,10 @@ import Playground from 'component-playground';
 import ReactDOM from 'react-dom';
 
 
+import MLButtonUsage from '../MLButton/MLButton.md';
+import MLToggleUsage from '../MLToggle/MLToggle.md';
+import MLMenuUsage from '../MLMenu/MLMenu.md';
+
 const Demo = styled.div`
   clear: both
 `;
@@ -34,6 +38,7 @@ class _Root extends Component {
         <Demo>
           <h2>Toggle Switch</h2>
           <Playground codeText={ require('raw!../MLToggle/MLToggle.example') } scope={{React, ReactDOM, MLToggle}} />
+          <MLToggleUsage />
         </Demo>
 
 
@@ -42,6 +47,7 @@ class _Root extends Component {
           <Playground
             codeText={ require('raw!../MLButton/MLButton.example') }
             scope={{React, ReactDOM, MLButton, Colors, MLIcon}} />
+          <MLButtonUsage />
         </Demo>
 
         <Demo>
@@ -49,6 +55,7 @@ class _Root extends Component {
           <Playground
             codeText={ require('raw!../MLMenu/MLMenu.example') }
             scope={{React, ReactDOM, MLMenu}} />
+          <MLMenuUsage />
         </Demo>
 
         <Demo>

@@ -40,7 +40,7 @@ const webpackConfig = {
       warnings: true
     }
   },
-  
+
   eslint: {
     configFile: './.eslintrc'
   },
@@ -150,6 +150,10 @@ const webpackConfig = {
           minetype: 'image/svg+xml',
           name: 'assets/images/[name].[ext]'
         }
+      },
+      {
+        test: /\.md$/,
+        loader: 'babel!react-markdown'
       }
     ]
   },
