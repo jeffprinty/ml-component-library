@@ -101,7 +101,7 @@ class _Root extends Component {
                           className={ css['marker'] }
                           key={ i }
                           label={ color }
-                          onClick={ (data) => (console.log(data)) }
+                          onClick={ data => (console.log(data)) }
                           markerColor={ color }
                           noX={ true }
                           isSelected={ false } />

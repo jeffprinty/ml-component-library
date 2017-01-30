@@ -80,7 +80,7 @@ MLButton.propTypes = {
   btnClass: PropTypes.string,
   btnType: PropTypes.string,
   onClick: PropTypes.func,
-  primary: PropTypes.string,
+  primary: PropTypes.bool,
   icon: PropTypes.string
 };
 

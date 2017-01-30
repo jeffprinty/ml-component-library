@@ -42,7 +42,7 @@ class MLAccordion extends Component {
       isOpen: false
     };
   }
-  _openDrawer = (e) => {
+  _openDrawer = e => {
     if (!!e.key && e.key !== 'Enter') {
       return false;
     }
@@ -86,7 +86,7 @@ MLAccordion.defaultProps = {
 
 MLAccordion.propTypes = {
   title: PropTypes.string.isRequired,
-  children: PropTypes.string.element
+  children: PropTypes.string
 };
 
 export default MLAccordion;

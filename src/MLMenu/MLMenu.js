@@ -124,7 +124,7 @@ class MLMenu extends Component {
         </DropdownTitle>
         <DrawerDiv>
           {
-            itemArray.map((itemName) => {
+            itemArray.map(itemName => {
               let clickItem = this._clickItem.bind(this, itemName);
               return (
                 <DropdownItem
