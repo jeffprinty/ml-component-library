@@ -3,6 +3,8 @@
 Keep track of reusable components.  
 They can be Icons, Buttons, Forms, etc.
 
+[Current plan](https://docs.google.com/a/holtzbrinck.com/document/d/1K2D3jMThpBflFlZ53kzR-cUaDHYDnXWu_97p_Uagygw/edit?usp=sharing)
+
 Now includes a webpack server and the beginnings of a KitchenSink-like app for CDL components
 
 Clone this branch and then run `npm install && npm start` to run the server and try out components.
