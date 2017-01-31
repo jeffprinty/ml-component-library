@@ -35,9 +35,6 @@ class _Root extends Component {
   render() {
     return (
       <div className={ css['pageWrap'] }>
-        <div className={ css['sidebar'] }>
-          boop
-        </div>
         <div className={ css['container'] }>
           <h1>ML CDL React Kitchen Sink</h1>
           <Demo>
