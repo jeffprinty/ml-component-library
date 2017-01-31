@@ -1,9 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import styled from 'styled-components';
-import {MLIcon} from '../index';
-import Colors from '../colors.js';
 
-const Button = styled.div`
+const Layout = styled.div`
   position: relative;
   display: inline-block;
 
@@ -48,15 +46,15 @@ const Icon = styled.span`
   color: ${props => props.primary ? Colors.pure_white : Colors.aqua};
 `;
 
-// const SpecialButton = styled.button`
+// const SpecialLayout = styled.Layout`
 // `
 
-// const MLButton = ({ title, btnClass, btnType, onClick, icon, style }) => {
-class MLButton extends Component {
+// const MLLayout = ({ title, btnClass, btnType, onClick, icon, style }) => {
+class MLLayout extends Component {
   render() {
     const { onClick, icon, title, primary } = this.props;
     return (
-      <Button
+      <Layout
         { ...this.props }
         onClick={ onClick } >
         { icon ?
@@ -65,17 +63,17 @@ class MLButton extends Component {
           </Icon>
         : null}
         <Title { ...this.props }>{ title }</Title>
-      </Button>
+      </Layout>
     );
   }
 }
 
-MLButton.defaultProps = {
+MLLayout.defaultProps = {
   btnClass: 'default',
   btnType: ''
 };
 
-MLButton.propTypes = {
+MLLayout.propTypes = {
   title: PropTypes.string.isRequired,
   btnClass: PropTypes.string,
   btnType: PropTypes.string,
@@ -84,4 +82,4 @@ MLButton.propTypes = {
   icon: PropTypes.string
 };
 
-export default MLButton;
+export default MLLayout;
