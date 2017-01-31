@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { MLIcon, MLMenu, MLCard, MLToggle, MLButton, MLAccordion } from '../index';
+import { MLIcon, MLMenu, MLCard, MLToggle, MLButton, MLAccordion, MLAccordionList } from '../index';
 import MarkerOrb from '../MarkerOrb/MarkerOrb';
 
 import '../../assets/styles/fonts.css';
@@ -13,10 +13,11 @@ import styled from 'styled-components';
 import Playground from 'component-playground';
 import ReactDOM from 'react-dom';
 
-
 import MLButtonUsage from '../MLButton/MLButton.md';
 import MLToggleUsage from '../MLToggle/MLToggle.md';
 import MLMenuUsage from '../MLMenu/MLMenu.md';
+import MLIconUsage from '../MLIcon/MLIcon.md';
+import MLAccordionUsage from '../MLAccordion/MLAccordion.md';
 
 const Demo = styled.div`
   clear: both
@@ -67,6 +68,14 @@ class _Root extends Component {
             <Playground
               codeText={ require('raw!../MLAccordion/MLAccordion.example') }
               scope={{React, ReactDOM, MLAccordion}} />
+            <MLAccordionUsage />
+          </Demo>
+
+          <Demo>
+            <h2>AccordionList [WIP]</h2>
+            <Playground
+              codeText={ require('raw!../MLAccordionList/MLAccordionList.example') }
+              scope={{React, ReactDOM, MLAccordionList}} />
           </Demo>
 
           <Demo>
@@ -79,6 +88,7 @@ class _Root extends Component {
           <Demo>
             <h2>Icon</h2>
             <Playground codeText={ require('raw!../MLIcon/MLIcon.example') } scope={{React, ReactDOM, MLIcon, Colors}} />
+            <MLIconUsage />
           </Demo>
 
           <div className={ css['demoWrap'] }>
