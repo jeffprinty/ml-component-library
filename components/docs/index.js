@@ -10,7 +10,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = require('react-dom');
 
-var _Root2 = require('./components/_Root/_Root');
+var _Root2 = require('../src/_Root/_Root');
 
 var _Root3 = _interopRequireDefault(_Root2);
 
@@ -25,10 +25,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 // Handle hot reloading requests from Webpack
 if (module.hot) {
-  module.hot.accept('./components/_Root/_Root', function () {
+  module.hot.accept('../src/_Root/_Root', function () {
     //If we receive a HMR request for our App container, then
     //reload it using require (we can't do this dynamically with import)
-    var NextApp = require('./components/_Root/_Root').default;
+    var NextApp = require('../src/_Root/_Root').default;
 
     // And render it into the root element again
     (0, _reactDom.render)(_react2.default.createElement(
