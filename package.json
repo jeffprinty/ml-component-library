@@ -10,7 +10,7 @@
   },
   "main": "./dist/index.js",
   "author": "Macmillan Learning",
-  "homepage": "https://bitbucket.org/mnv_tech/ml-react-component",
+  "homepage": "https://github.com/mlazul/ml-component-library",
   "devDependencies": {
     "babel-cli": "^6.6.4",
     "babel-core": "^6.7.4",
@@ -25,6 +25,7 @@
     "eslint-plugin-jsx-a11y": "^3.0.2",
     "eslint-plugin-react": "^4.2.3",
     "expect": "^1.20.2",
+    "gh-pages": "^0.12.0",
     "jsdom": "^8.1.0",
     "nodemon": "^1.9.1",
     "react": "^15.0.0",
@@ -79,6 +80,7 @@
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.js",
     "build": "BABEL_ENV=production node_modules/.bin/babel --out-dir='dist' --ignore='__tests__/*' src",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "deploy" : "npm run build&&gh-pages -d dist"
   }
 }
