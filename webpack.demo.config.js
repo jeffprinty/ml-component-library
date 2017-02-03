@@ -185,6 +185,7 @@ const webpackConfig = {
       beautify: false,
       comments: true,
       sourceMap: true,
+      minify: true,
       compress: {
         warnings: false,
         drop_console: true

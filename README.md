@@ -27,6 +27,7 @@ PRs and bug reports greatly appreciated. Contact @jeffp on slack or post in the 
 ## TODO
 * Package these as modules for NPM installation
 * Add a11y requirements
-* Finish copying usage information from 
+* Finish copying usage information from
+* Write tests
 
 View usage examples on the demo.
