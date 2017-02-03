@@ -1,7 +1,5 @@
 'use strict';
 
-require('babel-polyfill');
-
 var _reactHotLoader = require('react-hot-loader');
 
 var _react = require('react');
@@ -16,7 +14,7 @@ var _Root3 = _interopRequireDefault(_Root2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// IE polyfill for promises
+//import 'babel-polyfill'; // IE polyfill for promises
 (0, _reactDom.render)(_react2.default.createElement(
   _reactHotLoader.AppContainer,
   null,
