@@ -1,70 +1,32 @@
 # ML Component Library
 
-Keep track of reusable components.  
-They can be Icons, Buttons, Forms, etc.
+Keep track of reusable components for internal re-use. Based on the [CDL spec](https://macmillanlearning.atlassian.net/wiki/display/CDL/)
 
-## [Demo](https://mlazul.github.io/ml-component-library/)
+## [View the Library](https://mlazul.github.io/ml-component-library/)
 
 [Current plan](https://docs.google.com/a/holtzbrinck.com/document/d/1K2D3jMThpBflFlZ53kzR-cUaDHYDnXWu_97p_Uagygw/edit?usp=sharing)
 
-Now includes a webpack server and the beginnings of a KitchenSink-like app for CDL components
-
-Clone this branch and then run `npm install && npm start` to run the server and try out components.
+Clone this branch and then run `npm install && npm start` to run the server and try out components locally or visit the [library demo page](https://mlazul.github.io/ml-component-library/).
 
 PRs and bug reports greatly appreciated. Contact @jeffp on slack or post in the #cdl channel.
+
+## Folder structure
+```
+├── src/
+│     ├── assets
+│     │   └── fonts
+│     │   └── styles
+│     ├── components/
+│     │   └── MLButton
+│     │     └── MLButton.example // Demo code for the preview playground
+│     │     └── MLButton.js // React component module
+│     │     └── MLButton.md // Usage information, the text below the demo
+│     └── libs/
+```
 
 ## TODO
 * Package these as modules for NPM installation
 * Add a11y requirements
+* Finish copying usage information from 
 
-### Install 
-```
-npm install ml-react-components --save --registry http://npm.macmillantech.com:8080
-
-```
-### Consume
-```
-import { MLIcon, MLMenu } from '../MLComponents'
-```
-
-## MLMenu
-```
-<MLMenu 
-  itemClicked={ function(c){console.log('clicked item',c)} } 
-  title='test!'
-  itemArray={['beans','baby foxes']}/>
-```
-## MLIcon
-```
-<MLIcon 
-  className={ css['icon'] }
-  type='item_edit' 
-  width="24",
-  height="24",
-  viewBox="0 0 24 24",
-  fill="#ffffff",
-  title="Accessible title" />
-```
-
-## MLToggle
-```
-<MLToggle 
-  checked={ true } 
-  disabled={ true } on
-  Change={ this._clickToggle } />  
-```
-
-## MLCard
-```
-<MLCard 
-  title="The Gear Wars" 
-  content="It was never really about the gears." 
-  button={<MLButton title='Primary ' btnClass='primary' />}
-  />
-```
-## MLButton
-```
-<MLButton title='Primary ' btnClass='primary' />
-<MLButton title='Primary Red' btnClass='primary' secondary='red' />
-<MLButton title='Primary Green' btnClass='primary' secondary='green' />`
-```
+View usage examples on the demo.
