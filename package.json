@@ -81,6 +81,6 @@
     "start": "webpack-dev-server --config ./webpack.config.js",
     "build": "BABEL_ENV=production node_modules/.bin/babel --out-dir='dist' --ignore='__tests__/*' src",
     "prepublish": "npm run build",
-    "deploy" : "npm run build&&gh-pages -d dist -r https://github.com/mlazul/ml-component-library -o hub"
+    "deploy" : "npm run build&&gh-pages -d dist -r https://github.com/mlazul/ml-component-library -s example"
   }
 }
