@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { MLIcon, MLMenu, MLCard, MLToggle, MLButton, MLAccordion, MLAccordionList } from '../index';
+import { MLIcon, MLMenu, MLCard, MLToggle, MLButton, MLAccordion } from '../index';
 import MarkerOrb from '../MarkerOrb/MarkerOrb';
 
 import '../../assets/styles/fonts.css';
@@ -89,7 +89,7 @@ class _Root extends Component {
                   return <Mi key={ i } onClick={ this._goTo }>{ key }</Mi>;
                 })}
               </SideMenu>
-              <h3><a href="https://macmillanlearning.atlassian.net/wiki/display/CDL/" target="_new">View CDL in Confluence</a></h3>
+              <h3><a href="https://macmillanlearning.atlassian.net/wiki/display/CDL/" target="_new">View CDL<br />in Confluence</a></h3>
             </SideBar>
           </Col>
           <Col xs={ 11 } md={ 10 }>
@@ -128,15 +128,6 @@ class _Root extends Component {
                   scope={{React, ReactDOM, MLAccordion}} />
                 <MLAccordionUsage />
               </Demo>
-
-              <Demo>
-                <a name="AccordionList" />
-                <h2>AccordionList [WIP]</h2>
-                <Playground
-                  codeText={ require('raw!../MLAccordionList/MLAccordionList.example') }
-                  scope={{React, ReactDOM, MLAccordionList}} />
-              </Demo>
-
               <Demo>
                 <a name="Card" />
                 <h2>Card</h2>
@@ -144,14 +135,6 @@ class _Root extends Component {
                   codeText={ require('raw!../MLCard/MLCard.example') }
                   scope={{React, ReactDOM, MLCard, MLButton}} />
               </Demo>
-
-              <Demo>
-                <a name="Icon" />
-                <h2>Icon</h2>
-                <Playground codeText={ require('raw!../MLIcon/MLIcon.example') } scope={{React, ReactDOM, MLIcon, Colors}} />
-                <MLIconUsage />
-              </Demo>
-
               <div className={ css['demoWrap'] }>
                 <h2>Color Palette</h2>
                 <ColorGrid>
@@ -170,6 +153,12 @@ class _Root extends Component {
                   }
                 </ColorGrid>
               </div>
+              <Demo>
+                <a name="Icon" />
+                <h2>Icon</h2>
+                <Playground codeText={ require('raw!../MLIcon/MLIcon.example') } scope={{React, ReactDOM, MLIcon, Colors}} />
+                <MLIconUsage />
+              </Demo>
               <div className={ css['demoWrap'] }>
                 <h2>Icon Reference</h2>
                 <div className={ css['iconGrid'] }>

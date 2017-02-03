@@ -35,7 +35,7 @@ const AccordionContent = styled.div`
     color: #383838;
     word-wrap: break-word;
 `;
-class MLAccordion extends Component {
+class MLAccordionList extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -80,13 +80,13 @@ class MLAccordion extends Component {
 
 }
 
-MLAccordion.defaultProps = {
+MLAccordionList.defaultProps = {
   button: null
 };
 
-MLAccordion.propTypes = {
+MLAccordionList.propTypes = {
   title: PropTypes.string.isRequired,
   children: PropTypes.string
 };
 
-export default MLAccordion;
+export default MLAccordionList;
