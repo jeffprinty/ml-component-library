@@ -29,5 +29,7 @@ PRs and bug reports greatly appreciated. Contact @jeffp on slack or post in the 
 * Add a11y requirements
 * Finish copying usage information from
 * Write tests
+* AccordionList
+
 
 View usage examples on the demo.

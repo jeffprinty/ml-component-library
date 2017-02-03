@@ -78,7 +78,7 @@ class _Root extends Component {
   }
   render() {
     return (
-      <Grid>
+      <Grid style={{ width: '100%'}}>
         <Row>
           <Col xs={ 1 } md={ 2 }>
             <SideBar>
@@ -89,6 +89,7 @@ class _Root extends Component {
                   return <Mi key={ i } onClick={ this._goTo }>{ key }</Mi>;
                 })}
               </SideMenu>
+              <h3><a href="https://macmillanlearning.atlassian.net/wiki/display/CDL/" target="_new">View CDL in Confluence</a></h3>
             </SideBar>
           </Col>
           <Col xs={ 11 } md={ 10 }>
