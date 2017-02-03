@@ -20,6 +20,20 @@
   background-color: #FFF;
   
 }
+.playground {
+  display: flex;
+}
+.playground .playgroundCode {
+  flex-direction: row;
+  flex: 1;
+  order: 2;
+}
+.playground .playgroundPreview {
+  flex-direction: row;
+  flex:1;
+  order: 1;
+  padding: 5px;
+}
 /*pre {
     margin-bottom: 1em;
     padding: 5px;

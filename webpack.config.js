@@ -15,7 +15,7 @@ const webpackConfig = {
     host: '0.0.0.0',
     port: (process.env.PORT || '8008'),
 
-    contentBase: path.resolve(__dirname, './'),
+    contentBase: path.resolve(__dirname, './src'),
     historyApiFallback: true,
     compress: true,
 
@@ -50,7 +50,7 @@ const webpackConfig = {
   entry: {
     app: [
       'react-hot-loader/patch',
-      './example/index.js'
+      './src/index.js'
     ]
   },
   output: {
@@ -67,8 +67,8 @@ const webpackConfig = {
       {
         test: /\.jsx?$/,
         include: [
-          path.resolve(__dirname, 'src'),
-          path.resolve(__dirname, 'example/index.js')
+          path.resolve(__dirname, 'src/components'),
+          path.resolve(__dirname, 'src')
         ],
         loader: 'babel'
       },
@@ -80,8 +80,8 @@ const webpackConfig = {
       {
         test: /\.css$/,
         include: [
-          path.resolve(__dirname, 'assets/styles'),
-          path.resolve(__dirname, 'src')
+          path.resolve(__dirname, 'src/assets/styles'),
+          path.resolve(__dirname, 'src/components')
         ],
         loader: combineLoaders([
           {
@@ -118,37 +118,37 @@ const webpackConfig = {
       {
         test: /\.ttf$/,
         include: [
-          path.resolve(__dirname, 'assets/fonts')
+          path.resolve(__dirname, 'src/assets/fonts')
         ],
         loader: 'file',
         query: {
           limit: 10000,
           mimetype: 'application/octet-stream',
-          name: 'assets/fonts/[name].[ext]'
+          name: 'src/assets/fonts/[name].[ext]'
         }
       },
       {
         test: /\.png$/,
         include: [
-          path.resolve(__dirname, 'assets/images')
+          path.resolve(__dirname, 'src/assets/images')
         ],
         loader: 'file',
         query: {
           limit: 25000,
           mimetype: 'image/png',
-          name: 'assets/images/[name].[ext]'
+          name: 'src/assets/images/[name].[ext]'
         }
       },
       {
         test: /\.svg$/,
         include: [
-          path.resolve(__dirname, 'assets/images')
+          path.resolve(__dirname, 'src/assets/images')
         ],
         loader: 'file',
         query: {
           limit: 10000,
           minetype: 'image/svg+xml',
-          name: 'assets/images/[name].[ext]'
+          name: 'src/assets/images/[name].[ext]'
         }
       },
       {
@@ -163,7 +163,7 @@ const webpackConfig = {
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
     }),
     new HtmlWebpackPlugin({
-      template: './example/index.html',
+      template: './src/index.html',
       inject: true,
       hash: true,
       cache: true,
@@ -186,7 +186,7 @@ const webpackConfig = {
       require('postcss-smart-import')({
         addDependencyTo: _webpack,
         root: path.resolve(__dirname, './'),
-        path: ['assets', 'src'],
+        path: ['src/assets', 'src/components'],
         skipDuplicates: false
       }),
       require('postcss-cssnext')()
@@ -195,8 +195,8 @@ const webpackConfig = {
 
   resolve: {
     alias: {
-      Images: path.resolve(__dirname, 'assets/images'),
-      Styles: path.resolve(__dirname, 'assets/styles')
+      Images: path.resolve(__dirname, 'src/assets/images'),
+      Styles: path.resolve(__dirname, 'src/assets/styles')
     },
     extensions: ['', '.js', '.jsx']
   }

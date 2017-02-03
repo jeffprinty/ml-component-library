@@ -1,8 +1,30 @@
-export { default as MLAccordion } from './MLAccordion/MLAccordion';
-export { default as MLAlert } from './MLAlert/MLAlert';
-export { default as MLButton } from './MLButton/MLButton';
-export { default as MLCard } from './MLCard/MLCard';
-export { default as MLIcon } from './MLIcon/MLIcon';
-export { default as MLMenu } from './MLMenu/MLMenu';
-export { default as MLToggle } from './MLToggle/MLToggle';
-export { default as Colors } from './colors.js';
+//import 'babel-polyfill'; // IE polyfill for promises
+import { AppContainer } from 'react-hot-loader';
+import React from 'react';
+import { render } from 'react-dom';
+
+import _Root from './components/_Root/_Root';
+
+render(
+  <AppContainer>
+    <_Root />
+  </AppContainer>,
+  document.getElementById('root-entry')
+);
+
+// Handle hot reloading requests from Webpack
+if (module.hot) {
+  module.hot.accept('./components/_Root/_Root', () => {
+    //If we receive a HMR request for our App container, then
+    //reload it using require (we can't do this dynamically with import)
+    const NextApp = require('./components/_Root/_Root').default;
+
+    // And render it into the root element again
+    render(
+      <AppContainer>
+        <NextApp />
+      </AppContainer>,
+      document.getElementById('root-entry')
+    );
+  });
+}

@@ -56,9 +56,7 @@ const webpackConfig = {
         test: /\.css$/,
         include: [
           path.resolve(__dirname, 'src/components'),
-          path.resolve(__dirname, 'src/assets/styles')
-        ],
-        exclude: [
+          path.resolve(__dirname, 'src/assets/styles'),
           path.resolve(__dirname, 'src/assets/styles/normalizer.css'),
           path.resolve(__dirname, 'src/assets/styles/resets.css')
         ],
@@ -148,9 +146,9 @@ const webpackConfig = {
   },
 
   plugins: [
-    // new CaseSensitivePathsPlugin({
-    //   debug: false
-    // }),
+    new CaseSensitivePathsPlugin({
+      debug: false
+    }),
 
     new webpack.optimize.CommonsChunkPlugin({
       names: ['vendor', 'manifest'],

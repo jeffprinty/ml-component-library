@@ -1,7 +1,9 @@
-# ML Components
+# ML Component Library
 
 Keep track of reusable components.  
 They can be Icons, Buttons, Forms, etc.
+
+## [Demo](https://mlazul.github.io/ml-component-library/)
 
 [Current plan](https://docs.google.com/a/holtzbrinck.com/document/d/1K2D3jMThpBflFlZ53kzR-cUaDHYDnXWu_97p_Uagygw/edit?usp=sharing)
 
@@ -9,7 +11,7 @@ Now includes a webpack server and the beginnings of a KitchenSink-like app for C
 
 Clone this branch and then run `npm install && npm start` to run the server and try out components.
 
-PRs greatly appreciated.
+PRs and bug reports greatly appreciated. Contact @jeffp on slack or post in the #cdl channel.
 
 ## TODO
 * Package these as modules for NPM installation
