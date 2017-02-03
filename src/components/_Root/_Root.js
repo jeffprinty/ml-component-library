@@ -7,10 +7,13 @@ import '../../assets/styles/fonts.css';
 import Colors from '../colors.js';
 
 import css from './_root.css';
+//require("style-loader!css-loader!../../assets/styles/demoEditor.css");
+// import '../../assets/styles/demoEditor.css';
+// import '../../assets/styles/resets.css';
 
 import styled from 'styled-components';
 
-import Playground from 'component-playground';
+import Playground from '../Playground';
 import ReactDOM from 'react-dom';
 
 import MLButtonUsage from '../MLButton/MLButton.md';
@@ -28,12 +31,35 @@ const Demo = styled.div`
 const Mi = styled.li`
   padding: 6px;
   cursor: pointer;
+  list-style: none;
   &:hover {
     background-color: ${Colors.very_light_aqua};
   }
 `;
-const NavLink = styled.a`
-  text-decoration: none;
+const ColorCell = styled.div`
+  flex: 1 0 20%;
+  box-sizing: border-box;
+  background: #e0ddd5;
+  color: #171e42;
+  padding: 10px;
+  &:hover {
+    color: #ffffff;
+  }
+`;
+const ColorGrid = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+const SideBar = styled.div`
+  position: fixed;
+  font-family: 'Source Sans Pro';
+  font-weight: 300;
+`;
+const SideMenu = styled.ul`
+  list-style: none;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-padding-start: 0;
 `;
 
 
@@ -45,28 +71,32 @@ class _Root extends Component {
     };
   }
   _goTo = e => {
-    console.log('click', e.target);
+    console.log('click', e.target.innerHTML);
+    const loc = document.location.toString().split('#')[0];
+    document.location = loc + '#' + e.target.innerHTML;
+    return false;
   }
   render() {
     return (
       <Grid>
         <Row>
           <Col xs={ 1 } md={ 2 }>
-            <div style={{ position: 'fixed' }}>
-              <h2>Macmillan CDL</h2>
-              <ul>
+            <SideBar>
+              <h2>Macmillan<br />Component<br />Library</h2>
+              <h3>API</h3>
+              <SideMenu>
                 { ['Toggle', 'Button', 'Menu', 'Accordion', 'AccordionList', 'Card'].map((key, i) => {
-                  return <Mi key={ i }><NavLink href={ '#' + key } >{ key }</NavLink></Mi>;
+                  return <Mi key={ i } onClick={ this._goTo }>{ key }</Mi>;
                 })}
-              </ul>
-            </div>
+              </SideMenu>
+            </SideBar>
           </Col>
           <Col xs={ 11 } md={ 10 }>
             <div className={ css['container'] }>
               <Demo>
-                <a title="toggle" />
+                <a name="Toggle" />
                 <h2>Toggle Switch</h2>
-                <Playground codeText={ require('raw!../MLToggle/MLToggle.example') } scope={{React, ReactDOM, MLToggle}} />
+                <Playground className={ css['playground'] } codeText={ require('raw!../MLToggle/MLToggle.example') } scope={{React, ReactDOM, MLToggle}} />
                 <MLToggleUsage />
               </Demo>
 
@@ -123,19 +153,21 @@ class _Root extends Component {
 
               <div className={ css['demoWrap'] }>
                 <h2>Color Palette</h2>
-                {
-                  Object.keys(Colors).map((color, i) => {
-                    const colorHex = Colors[color];
-                    return (
-                      <div key={ i } className={ css['colorGrid'] } style={{ backgroundColor: colorHex }}>
-                        { color }
-                        <br />
-                        { colorHex }
-                      </div>
+                <ColorGrid>
+                  {
+                    Object.keys(Colors).map((color, i) => {
+                      const colorHex = Colors[color];
+                      return (
+                        <ColorCell key={ i } style={{ backgroundColor: colorHex }}>
+                          { color }
+                          <br />
+                          { colorHex }
+                        </ColorCell>
 
-                    );
-                  })
-                }
+                      );
+                    })
+                  }
+                </ColorGrid>
               </div>
               <div className={ css['demoWrap'] }>
                 <h2>Icon Reference</h2>

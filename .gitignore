@@ -6,5 +6,6 @@ npm-debug.log
 comMsg.md
 comMsg.txt
 
+build/*
 dist/*
 *.tgz
