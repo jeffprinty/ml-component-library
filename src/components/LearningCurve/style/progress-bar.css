@@ -1,0 +1,28 @@
+@value colorGreenDarker, colorGrayMediumDark, colorBlueDarker from './baseColors.css';
+
+.base {
+  border-radius: 0px;
+  display: inline-block;
+  border: 1px solid colorGrayMediumDark;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  background-color: white;
+}
+
+.progressValueBase {
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+  border: 0px !important;
+  margin: 0px !important;
+  background-color: colorGreenDarker;
+}
+
+.progressBarInnerBase {
+  border-radius: 0px !important;
+  border: 0px !important;
+  margin: 0px !important;
+  background-color: colorBlueDarker;
+  background: url('../assets/potential-progress.png');
+  background-size: 3px 20px;
+}

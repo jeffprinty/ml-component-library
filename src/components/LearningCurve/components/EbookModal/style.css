@@ -1,0 +1,20 @@
+@value colorGrayDarker from '../style/baseColors.css';
+
+.modalContainer {
+  padding-top: 50px;
+}
+
+.content {
+  font-weight: normal;
+  color: colorGrayDarker;
+}
+
+.headerContainer {
+  border: 0px;
+  padding-bottom: 0;
+}
+
+.footerContainer {
+  border: 0px;
+  text-align: center;
+}

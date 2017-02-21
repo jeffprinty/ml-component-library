@@ -1,0 +1,74 @@
+@value colorBlueDarker, colorGrayMediumDark, colorGrayDarker, colorBlueDarker, colorGrayDarkest from '../style/baseColors.css';
+
+.progressBar {
+  width: 100%;
+  height: 12px;
+  border-radius: 0;
+  margin-top: 0px;
+  border: 1px solid colorGrayMediumDark;
+}
+
+.progressBarValue {
+  margin: 0px;
+  background-color: colorBlueDarker;
+}
+
+.activityScoreValue, .targetScoreValue {
+  font-size: 24px;
+}
+
+.activityScoreValue {
+  color: colorGrayDarkest;
+}
+
+.pointsText {
+  margin-top: -2px;
+  color: colorGrayDarkest;
+  font-size: 14px;
+}
+
+.targetScoreText {
+  float: right;
+  text-align: center;
+  color: colorGrayDarker;
+  font-size: 14px;
+}
+
+.congratulationText {
+  font-weight: normal;
+  font-size: 18px;
+  color: colorBlueDarker;
+}
+
+.completedText {
+  font-size: 16px;
+  margin-top: 15px;
+  color: colorBlueDarker;
+}
+
+.continueText {
+  font-size: 14px;
+  color: colorGrayDarkest;
+}
+
+.targetScoreHeader {
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+.targetScoreLabel {
+  padding-bottom: 0.5rem;
+  color: colorGrayDarker;
+  font-size: 14px;
+}
+
+.targetScoreContainer {
+  top: -16px;
+}
+
+@media (max-width: 768px) {
+  .targetScoreText {
+    padding-left: 5px;
+    margin-right: 0px;
+  }
+}

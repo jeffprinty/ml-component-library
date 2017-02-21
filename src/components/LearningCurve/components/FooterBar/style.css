@@ -1,0 +1,60 @@
+@value colorGrayMedium, colorGrayDark, colorAquaDarker from '../style/baseColors.css';
+
+.container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  min-height: 100px;
+  background: colorGrayMedium;
+  z-index: 1;
+}
+
+.splitContainer {
+  position: fixed;
+  bottom: 0;
+  width: 50%;
+  min-height: 100px;
+  background: colorGrayMedium;
+  z-index: 1;
+}
+
+.legacySplitContainer {
+  position: fixed;
+  bottom: 0;
+  width: 320px;
+  min-height: 100px;
+  background: colorGrayMedium;
+  z-index: 1;
+}
+
+.splitContainer > div:nth-child(1),
+.splitContainer > div:nth-child(1) > div:nth-child(1) {
+  width: 100% !important;
+}
+
+.legacySplitContainer > div:nth-child(1),
+.legacySplitContainer > div:nth-child(1) > div:nth-child(1) {
+  width: 320px !important;
+}
+
+.legacySplitContainer > div:nth-child(1) > div:nth-child(1) {
+  padding-left: 8px;
+}
+
+.centerRoundButton {
+  composes: base from '../../style/button.css';
+  border-radius: 50%;
+  border: 4px solid white;
+  background-color: colorAquaDarker;
+  width: 125px;
+  height: 125px;
+  position: absolute;
+  transform: translateX(-50%);
+  top: -50%;
+  left: 50%;
+  font-size: 18px;
+  line-height: 26px;
+  color: white;
+  box-shadow: 0px 0px 10px 3px colorGrayDark;
+  word-spacing: 150px;
+}
