@@ -5,12 +5,12 @@ import Modal from 'react-bootstrap/lib/Modal'
 
 import style from './style.css'
 
-export default function EbookModal (props) {
+export default function GenericModal (props) {
   return (
     <div>
       <Modal show={true} className={classnames(style.modalContainer)}>
         <Modal.Header className={classnames('modal-header', style.headerContainer)}>
-          <Modal.Title>To read about this topic, go to your textbook:</Modal.Title>
+          <Modal.Title>This is an example generic modal with a title:</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <p className={style.content} dangerouslySetInnerHTML={{__html: props.data}}>
@@ -30,7 +30,7 @@ export default function EbookModal (props) {
   )
 }
 
-EbookModal.propTypes = {
+GenericModal.propTypes = {
   onClick: React.PropTypes.func.isRequired,
   data: React.PropTypes.string.isRequired
 }
