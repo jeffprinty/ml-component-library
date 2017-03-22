@@ -10,6 +10,10 @@ Clone this branch and then run `npm install && npm start` to run the server and 
 
 PRs and bug reports greatly appreciated. Contact @jeffp on slack or post in the #cdl channel.
 
+## styled-components
+
+I have ported some of these components over to [`styled-components`](https://mxstbr.blog/2016/11/styled-components-magic-explained/) from CSS modules for simplicity and because I really like them. I am open to other options but the self-contained aspect of styled-components is appealing for this use case.
+
 ## Folder structure
 ```
 ├── src/
@@ -25,6 +29,9 @@ PRs and bug reports greatly appreciated. Contact @jeffp on slack or post in the 
 ```
 
 ## TODO
+* Establish component standards
+  * Which components are pure vs smart?
+  * 
 * Package these as modules for NPM installation
 * Add a11y requirements
 * Finish copying usage information from
