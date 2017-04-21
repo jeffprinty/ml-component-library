@@ -1,0 +1,5 @@
+.container {
+  &:focus {
+    outline: none
+  }
+}

@@ -1,0 +1,23 @@
+@value colorBlueLightest, colorBlueLighter, colorGrayMedium from './baseColors.css';
+
+.base {
+  border: 1px solid colorGrayMedium;
+  box-shadow: 1px 1px 1px colorGrayMedium;
+  background-color: white;
+  padding: 23px;
+}
+
+.small {
+  composes: base;
+  padding: 10px;
+}
+
+.large {
+  composes: base;
+}
+
+.shaded {
+  composes: base;
+  border: 2px solid colorBlueLighter;
+  background-color: colorBlueLightest;
+}

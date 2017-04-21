@@ -1,0 +1,73 @@
+/* red */
+@value colorRedMacmillan:     #da1b2c;
+@value colorRedLightest:      #ffe7e5;
+@value colorRedLighter:       #ffafaf;
+@value colorRedMedium:        #ef5656;
+@value colorRedDark:          #da1b2c;
+@value colorRedDarkest:       #a51426;
+
+/* orange */
+@value colorOrangeLightest:   #ffe5d3;
+@value colorOrangeLighter:    #ffc196;
+@value colorOrangeMedium:     #ff8a57;
+@value colorOrangeDarker:     #dd5714;
+@value colorOrangeDarkest:    #a83d0e;
+
+/* yellow */
+@value colorYellowLightest:   #fffbd7;
+@value colorYellowLighter:    #faf2a9;
+@value colorYellowMedium:     #e5d676;
+@value colorYellowDarker:     #b79e25;
+@value colorYellowDarkest:    #74600c;
+
+/* green */
+@value colorGreenLightest:    #daf4d4;
+@value colorGreenLighter:     #acdba2;
+@value colorGreenMedium:      #68b75f;
+@value colorGreenDarker:      #3b822e;
+@value colorGreenDarkest:     #2c5e20;
+
+/* teal */
+@value colorTealLightest:     #dbfff3;
+@value colorTealLighter:      #aee5d3;
+@value colorTealMedium:       #5fb79c;
+@value colorTealDarker:       #218466;
+@value colorTealDarkest:      #16664b;
+
+/* aqua */
+@value colorAquaLightest:     #cff3f9;
+@value colorAquaLighter:      #a2d6dd;
+@value colorAquaMedium:       #45a5b5;
+@value colorAquaDarker:       #00758e;
+@value colorAquaDarkest:      #205460;
+
+/* blue */
+@value colorBlueLightest:     #e0f1ff;
+@value colorBlueLighter:      #b0daff;
+@value colorBlueMedium:       #3192d3;
+@value colorBlueDarker:       #006eb8;
+@value colorBlueDarkest:      #004c72;
+
+/* purple */
+@value colorPurpleLightest:   #ffe6fd;
+@value colorPurpleLighter:    #e5c6e3;
+@value colorPurpleMedium:     #b286af;
+@value colorPurpleDarker:     #865f7f;
+@value colorPurpleDarkest:    #543b50;
+
+/* magenta */
+@value colorMagentaLightest:  #ffe6f3;
+@value colorMagentaLighter:   #edb0ce;
+@value colorMagentaMedium:    #b26487;
+@value colorMagentaDarker:    #882345;
+@value colorMagentaDarkest:   #562135;
+
+/* gray */
+@value colorGrayLightest:     #f8f8f8;
+@value colorGrayLight:        #f3f3f3;
+@value colorGrayMedium:       #dddddd;
+@value colorGrayMediumDark:   #c8c8c8;
+@value colorGrayDark:         #989898;
+@value colorGrayDarker:       #686868;
+@value colorGrayDarkest:      #383838;
+@value colorBlackish:         #080808;

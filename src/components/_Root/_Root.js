@@ -85,7 +85,7 @@ class _Root extends Component {
               <h2>Macmillan<br />Component<br />Library</h2>
               <h3>API</h3>
               <SideMenu>
-                { ['Toggle', 'Button', 'Menu', 'Accordion', 'AccordionList', 'Card'].map((key, i) => {
+                { ['Toggle', 'Button', 'Menu', 'Accordion', 'AccordionList', 'Card', 'Colors', 'Icon'].map((key, i) => {
                   return <Mi key={ i } onClick={ this._goTo }>{ key }</Mi>;
                 })}
               </SideMenu>
@@ -136,6 +136,7 @@ class _Root extends Component {
                   scope={{React, ReactDOM, MLCard, MLButton}} />
               </Demo>
               <div className={ css['demoWrap'] }>
+                <a name="Colors" />
                 <h2>Color Palette</h2>
                 <ColorGrid>
                   {
